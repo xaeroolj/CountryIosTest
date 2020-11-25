@@ -8,29 +8,41 @@
 import Foundation
 
 protocol MainViewProtocol: class {
-    func setSource(source: Country)
+    func updateView()
+    func showError(_ error: NetworkError)
 }
 
 protocol MainViewPresenterProtocol: class  {
-    init(view: MainViewProtocol, model: Country)
+    init(view: MainViewProtocol, dataService: CountryServiseProtocol)
     
-    func loadSource()
+    func getCountry(for name: String)
+    
+    var countryArray: [CountryCellProtocol]? { get set }
 }
 
 class MainPresenter: MainViewPresenterProtocol {
+
+    weak var view: MainViewProtocol?
+    let dataService: CountryServiseProtocol!
     
-    let view: MainViewProtocol
-    let model: Country
-    
-    required init(view: MainViewProtocol, model: Country) {
+    var countryArray: [CountryCellProtocol]?
+
+    required init(view: MainViewProtocol, dataService: CountryServiseProtocol) {
         self.view = view
-        self.model = model
+        self.dataService = dataService
         
     }
     
-    func loadSource() {
-        //set someshing
-        self.view.setSource(source: self.model)
+    func getCountry(for name: String) {
+        dataService.getCountryBy(name: name) { [weak self] result in
+            guard let self = self else { return }
+            DispatchQueue.main.async {
+                do {
+                    self.countryArray = try result.get()
+                    self.view?.updateView()
+                } catch { self.view?.showError(error as! NetworkError) }
+            }
+        }
     }
     
     

@@ -12,7 +12,7 @@ protocol CountryCellProtocol {
     var countryCode: String {get}
 }
 
-struct Country: Codable {
+struct Country: Codable, CountryCellProtocol {
     let countryName: String
     let countryCode: String
     
