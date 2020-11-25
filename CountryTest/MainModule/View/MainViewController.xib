@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_0" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MainViewController" customModule="CountryTest" customModuleProvider="target">
+            <connections>
+                <outlet property="searchTextField" destination="OkY-9I-bkd" id="Fso-Dh-3QH"/>
+                <outlet property="tableView" destination="rc6-xK-4R9" id="Z6z-Fx-g23"/>
+                <outlet property="view" destination="iN0-l3-epB" id="4oJ-aH-1DZ"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="rc6-xK-4R9">
+                    <rect key="frame" x="0.0" y="66" width="320" height="502"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                </tableView>
+                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Search" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="OkY-9I-bkd">
+                    <rect key="frame" x="0.0" y="16" width="320" height="34"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits"/>
+                </textField>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="rc6-xK-4R9" firstAttribute="top" secondItem="OkY-9I-bkd" secondAttribute="bottom" constant="16" id="8it-AN-uLL"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="OkY-9I-bkd" secondAttribute="trailing" id="HCb-f1-VFS"/>
+                <constraint firstItem="OkY-9I-bkd" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="16" id="UHg-ip-m7j"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="rc6-xK-4R9" secondAttribute="bottom" id="WIX-CA-6c0"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="rc6-xK-4R9" secondAttribute="trailing" id="YyY-1g-IYJ"/>
+                <constraint firstItem="rc6-xK-4R9" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="scJ-ZV-i9P"/>
+                <constraint firstItem="OkY-9I-bkd" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="y95-FU-0Tu"/>
+            </constraints>
+            <point key="canvasLocation" x="20" y="93"/>
+        </view>
+    </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
