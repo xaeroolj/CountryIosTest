@@ -10,52 +10,66 @@ import XCTest
 
 class MockView: MainViewProtocol {
     
-    var model: Country?
-    
-    func setSource(source: Country) {
-        self.model = source
+    func updateView() {
+        
     }
     
+    func showError(_ error: NetworkError) {
+        
+    }
+    
+}
+
+class MockDataService: CountryServiseProtocol {
+    func getCountryFor(code: String, completion: @escaping (Result<Country, NetworkError>) -> Void) {
+        
+    }
+    
+    func getCountryBy(name: String, completion: @escaping (Result<[Country], NetworkError>) -> Void) {
+        
+    }
     
 }
 
 class MainPresenterTests: XCTestCase {
 
     var view: MockView!
-    var model: Country!
     var presenter: MainPresenter!
+    var dataService: CountryServiseProtocol!
     
     override func setUpWithError() throws {
         view = MockView()
-        model = Country(countryName: "Baz", countryCode: "Bar")
-        presenter = MainPresenter(view: view, model: model)
+        dataService = MockDataService()
+        presenter = MainPresenter(view: view, dataService: dataService)
     }
     
     override func tearDownWithError() throws {
         view = nil
-        model = nil
+        dataService = nil
         presenter = nil
     }
     
     func testModuleIsNotNil() throws {
         XCTAssertNotNil(view, "View is not nil")
-        XCTAssertNotNil(model, "Model is not nil")
+        XCTAssertNotNil(dataService, "dataService is not nil")
         XCTAssertNotNil(presenter, "Presenter is not nil")
     }
     
     func testView() throws {
-        presenter.loadSource()
+        presenter.dataService.getCountryBy(name: "ru") { [weak self] result in
+            guard let self = self else { return }
+        }
         
-        XCTAssertEqual(view.model?.countryName, "Baz")
-        XCTAssertEqual(view.model?.countryCode, "Bar")
+//        XCTAssertEqual(view.model?.countryName, "Baz")
+        
     }
     
-    func testModel() throws {
-        
-        XCTAssertEqual(model.countryName, "Baz")
-        XCTAssertEqual(model.countryCode, "Bar")
-        
-    }
+//    func testModel() throws {
+//
+//        XCTAssertEqual(model.countryName, "Baz")
+//        XCTAssertEqual(model.countryCode, "Bar")
+//
+//    }
     
 
 }
