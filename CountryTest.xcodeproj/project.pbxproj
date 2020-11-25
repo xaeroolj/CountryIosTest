@@ -16,6 +16,11 @@
 		FF1F7A62256ED13200FA5CE5 /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FF1F7A61256ED13200FA5CE5 /* MainViewController.xib */; };
 		FF1F7A67256ED32800FA5CE5 /* ModuleBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF1F7A66256ED32800FA5CE5 /* ModuleBuilder.swift */; };
 		FF1F7A72256EDAFC00FA5CE5 /* MainPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF1F7A71256EDAFC00FA5CE5 /* MainPresenterTests.swift */; };
+		FF1F7A8C256EF5B100FA5CE5 /* Resource.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF1F7A8B256EF5B100FA5CE5 /* Resource.swift */; };
+		FF1F7A95256EF5D900FA5CE5 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF1F7A94256EF5D900FA5CE5 /* NetworkService.swift */; };
+		FF1F7A99256EF5F500FA5CE5 /* NetworkDataFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF1F7A98256EF5F500FA5CE5 /* NetworkDataFetcher.swift */; };
+		FF1F7A9D256EF61200FA5CE5 /* NetworkErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF1F7A9C256EF61200FA5CE5 /* NetworkErrors.swift */; };
+		FF1F7AA1256EF64600FA5CE5 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF1F7AA0256EF64600FA5CE5 /* Constants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,6 +47,11 @@
 		FF1F7A61256ED13200FA5CE5 /* MainViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainViewController.xib; sourceTree = "<group>"; };
 		FF1F7A66256ED32800FA5CE5 /* ModuleBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModuleBuilder.swift; sourceTree = "<group>"; };
 		FF1F7A71256EDAFC00FA5CE5 /* MainPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPresenterTests.swift; sourceTree = "<group>"; };
+		FF1F7A8B256EF5B100FA5CE5 /* Resource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Resource.swift; sourceTree = "<group>"; };
+		FF1F7A94256EF5D900FA5CE5 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
+		FF1F7A98256EF5F500FA5CE5 /* NetworkDataFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkDataFetcher.swift; sourceTree = "<group>"; };
+		FF1F7A9C256EF61200FA5CE5 /* NetworkErrors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkErrors.swift; sourceTree = "<group>"; };
+		FF1F7AA0256EF64600FA5CE5 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +94,8 @@
 			isa = PBXGroup;
 			children = (
 				FF1F7A66256ED32800FA5CE5 /* ModuleBuilder.swift */,
+				FF1F7AA0256EF64600FA5CE5 /* Constants.swift */,
+				FF1F7A8F256EF5B500FA5CE5 /* NetworkLayer */,
 				FF1F7A4F256EC83900FA5CE5 /* MainModule */,
 				FF1F7A08256EC37500FA5CE5 /* Assets.xcassets */,
 				FF1F79FF256EC36D00FA5CE5 /* AppDelegate.swift */,
@@ -143,6 +155,17 @@
 				FF1F7A71256EDAFC00FA5CE5 /* MainPresenterTests.swift */,
 			);
 			path = MainModuleTests;
+			sourceTree = "<group>";
+		};
+		FF1F7A8F256EF5B500FA5CE5 /* NetworkLayer */ = {
+			isa = PBXGroup;
+			children = (
+				FF1F7A8B256EF5B100FA5CE5 /* Resource.swift */,
+				FF1F7A94256EF5D900FA5CE5 /* NetworkService.swift */,
+				FF1F7A98256EF5F500FA5CE5 /* NetworkDataFetcher.swift */,
+				FF1F7A9C256EF61200FA5CE5 /* NetworkErrors.swift */,
+			);
+			path = NetworkLayer;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -245,11 +268,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FF1F7A99256EF5F500FA5CE5 /* NetworkDataFetcher.swift in Sources */,
 				FF1F7A54256ECAF400FA5CE5 /* Country.swift in Sources */,
 				FF1F7A04256EC36D00FA5CE5 /* MainViewController.swift in Sources */,
 				FF1F7A4B256EC81B00FA5CE5 /* MainPresenter.swift in Sources */,
+				FF1F7A8C256EF5B100FA5CE5 /* Resource.swift in Sources */,
+				FF1F7AA1256EF64600FA5CE5 /* Constants.swift in Sources */,
 				FF1F7A67256ED32800FA5CE5 /* ModuleBuilder.swift in Sources */,
 				FF1F7A00256EC36D00FA5CE5 /* AppDelegate.swift in Sources */,
+				FF1F7A95256EF5D900FA5CE5 /* NetworkService.swift in Sources */,
+				FF1F7A9D256EF61200FA5CE5 /* NetworkErrors.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

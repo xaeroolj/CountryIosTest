@@ -23,7 +23,6 @@
             <subviews>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="rc6-xK-4R9">
                     <rect key="frame" x="0.0" y="66" width="320" height="502"/>
-                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                 </tableView>
                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Search" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="OkY-9I-bkd">
                     <rect key="frame" x="0.0" y="16" width="320" height="34"/>
