@@ -21,6 +21,8 @@
 		FF1F7A99256EF5F500FA5CE5 /* NetworkDataFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF1F7A98256EF5F500FA5CE5 /* NetworkDataFetcher.swift */; };
 		FF1F7A9D256EF61200FA5CE5 /* NetworkErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF1F7A9C256EF61200FA5CE5 /* NetworkErrors.swift */; };
 		FF1F7AA1256EF64600FA5CE5 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF1F7AA0256EF64600FA5CE5 /* Constants.swift */; };
+		FF1F7AA5256EF8F900FA5CE5 /* CountryServise.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF1F7AA4256EF8F900FA5CE5 /* CountryServise.swift */; };
+		FF1F7AAF256F001900FA5CE5 /* UrlConstructor.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF1F7AAE256F001900FA5CE5 /* UrlConstructor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +54,8 @@
 		FF1F7A98256EF5F500FA5CE5 /* NetworkDataFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkDataFetcher.swift; sourceTree = "<group>"; };
 		FF1F7A9C256EF61200FA5CE5 /* NetworkErrors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkErrors.swift; sourceTree = "<group>"; };
 		FF1F7AA0256EF64600FA5CE5 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		FF1F7AA4256EF8F900FA5CE5 /* CountryServise.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryServise.swift; sourceTree = "<group>"; };
+		FF1F7AAE256F001900FA5CE5 /* UrlConstructor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UrlConstructor.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,7 +98,8 @@
 			isa = PBXGroup;
 			children = (
 				FF1F7A66256ED32800FA5CE5 /* ModuleBuilder.swift */,
-				FF1F7AA0256EF64600FA5CE5 /* Constants.swift */,
+				FF1F7AAB256F000900FA5CE5 /* Helpers */,
+				FF1F7AA8256EF90000FA5CE5 /* Services */,
 				FF1F7A8F256EF5B500FA5CE5 /* NetworkLayer */,
 				FF1F7A4F256EC83900FA5CE5 /* MainModule */,
 				FF1F7A08256EC37500FA5CE5 /* Assets.xcassets */,
@@ -166,6 +171,23 @@
 				FF1F7A9C256EF61200FA5CE5 /* NetworkErrors.swift */,
 			);
 			path = NetworkLayer;
+			sourceTree = "<group>";
+		};
+		FF1F7AA8256EF90000FA5CE5 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				FF1F7AA4256EF8F900FA5CE5 /* CountryServise.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		FF1F7AAB256F000900FA5CE5 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				FF1F7AA0256EF64600FA5CE5 /* Constants.swift */,
+				FF1F7AAE256F001900FA5CE5 /* UrlConstructor.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -272,11 +294,13 @@
 				FF1F7A54256ECAF400FA5CE5 /* Country.swift in Sources */,
 				FF1F7A04256EC36D00FA5CE5 /* MainViewController.swift in Sources */,
 				FF1F7A4B256EC81B00FA5CE5 /* MainPresenter.swift in Sources */,
+				FF1F7AAF256F001900FA5CE5 /* UrlConstructor.swift in Sources */,
 				FF1F7A8C256EF5B100FA5CE5 /* Resource.swift in Sources */,
 				FF1F7AA1256EF64600FA5CE5 /* Constants.swift in Sources */,
 				FF1F7A67256ED32800FA5CE5 /* ModuleBuilder.swift in Sources */,
 				FF1F7A00256EC36D00FA5CE5 /* AppDelegate.swift in Sources */,
 				FF1F7A95256EF5D900FA5CE5 /* NetworkService.swift in Sources */,
+				FF1F7AA5256EF8F900FA5CE5 /* CountryServise.swift in Sources */,
 				FF1F7A9D256EF61200FA5CE5 /* NetworkErrors.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
