@@ -10,7 +10,7 @@ import Foundation
 protocol CountryServiseProtocol {
     
     func getCountryFor(code: String, completion: @escaping (Result<Country, NetworkError>) -> Void)
-    func getCountryName(name: String, completion: @escaping (Result<[Country], NetworkError>) -> Void)
+    func getCountryBy(name: String, completion: @escaping (Result<[Country], NetworkError>) -> Void)
 }
 
 final public class CountryServise: CountryServiseProtocol {
@@ -18,7 +18,7 @@ final public class CountryServise: CountryServiseProtocol {
     private let dataFetcher = NetworkDataFetcher()
 
     //MARK: - Request Countryes for name
-    func getCountryName(name: String, completion: @escaping (Result<[Country], NetworkError>) -> Void) {
+    func getCountryBy(name: String, completion: @escaping (Result<[Country], NetworkError>) -> Void) {
         
         guard let url = UrlConstructor.getCountryByNameUrl(name: name ) else {
             completion(.failure(.badUrlError))
