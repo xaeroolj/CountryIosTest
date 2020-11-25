@@ -17,7 +17,6 @@ class MainViewController: UIViewController {
     var presenter: MainViewPresenterProtocol!
     
     // MARK: - Private Properties
-    private var source: Country?
     
     // MARK: - Initializers
     
@@ -39,24 +38,30 @@ class MainViewController: UIViewController {
 }
 
 extension MainViewController: MainViewProtocol {
-    func setSource(source: Country) {
-        self.source = source
-        
+    func updateView() {
+        tableView.reloadData()
+    }
+    
+    func showError(_ error: NetworkError) {
+        // TODO: Create allert view
+        #warning("TODO: Create allert view")
+        print(error.localizedDescription)
     }
 }
 
 extension MainViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 2
+        return presenter.countryArray?.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell(style: UITableViewCell.CellStyle.subtitle,
                                    reuseIdentifier: K.CellIdentifiers.mainModuleCell)
+        let country = presenter.countryArray?[indexPath.row ]
 
-        cell.textLabel?.text = "test"
+        cell.textLabel?.text = country?.countryName
         
-        cell.detailTextLabel?.text = "detail"
+        cell.detailTextLabel?.text = country?.countryCode
         return cell
     }
     
