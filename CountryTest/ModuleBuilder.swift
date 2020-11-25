@@ -14,10 +14,12 @@ protocol BuilderProtocol {
 
 class ModuleBuilder: BuilderProtocol {
     static func createMain() -> UIViewController {
-        let model = Country(countryName: "MotherRussia", countryCode: "rus")
         let view = MainViewController()
-        let presenter = MainPresenter(view: view, model: model)
+        let dataService = CountryServise()
+        let presenter = MainPresenter(view: view, dataService: dataService)
         view.presenter = presenter
+        
+        presenter.getCountry(for: "ru"); #warning("only for test")
         return view
     }
     
