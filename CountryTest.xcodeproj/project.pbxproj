@@ -23,6 +23,7 @@
 		FF1F7AA1256EF64600FA5CE5 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF1F7AA0256EF64600FA5CE5 /* Constants.swift */; };
 		FF1F7AA5256EF8F900FA5CE5 /* CountryServise.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF1F7AA4256EF8F900FA5CE5 /* CountryServise.swift */; };
 		FF1F7AAF256F001900FA5CE5 /* UrlConstructor.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF1F7AAE256F001900FA5CE5 /* UrlConstructor.swift */; };
+		FF1F7AB3256FA7BC00FA5CE5 /* DetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF1F7AB2256FA7BC00FA5CE5 /* DetailPresenter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +57,7 @@
 		FF1F7AA0256EF64600FA5CE5 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		FF1F7AA4256EF8F900FA5CE5 /* CountryServise.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryServise.swift; sourceTree = "<group>"; };
 		FF1F7AAE256F001900FA5CE5 /* UrlConstructor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UrlConstructor.swift; sourceTree = "<group>"; };
+		FF1F7AB2256FA7BC00FA5CE5 /* DetailPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPresenter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,10 +99,11 @@
 		FF1F79FE256EC36D00FA5CE5 /* CountryTest */ = {
 			isa = PBXGroup;
 			children = (
-				FF1F7A66256ED32800FA5CE5 /* ModuleBuilder.swift */,
 				FF1F7AAB256F000900FA5CE5 /* Helpers */,
-				FF1F7AA8256EF90000FA5CE5 /* Services */,
+				FF1F7A66256ED32800FA5CE5 /* ModuleBuilder.swift */,
 				FF1F7A8F256EF5B500FA5CE5 /* NetworkLayer */,
+				FF1F7AA8256EF90000FA5CE5 /* Services */,
+				FF1F7AB6256FABB800FA5CE5 /* DetailModule */,
 				FF1F7A4F256EC83900FA5CE5 /* MainModule */,
 				FF1F7A08256EC37500FA5CE5 /* Assets.xcassets */,
 				FF1F79FF256EC36D00FA5CE5 /* AppDelegate.swift */,
@@ -188,6 +191,22 @@
 				FF1F7AAE256F001900FA5CE5 /* UrlConstructor.swift */,
 			);
 			path = Helpers;
+			sourceTree = "<group>";
+		};
+		FF1F7AB6256FABB800FA5CE5 /* DetailModule */ = {
+			isa = PBXGroup;
+			children = (
+				FF1F7AB7256FABC600FA5CE5 /* Presenter */,
+			);
+			path = DetailModule;
+			sourceTree = "<group>";
+		};
+		FF1F7AB7256FABC600FA5CE5 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				FF1F7AB2256FA7BC00FA5CE5 /* DetailPresenter.swift */,
+			);
+			path = Presenter;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -300,6 +319,7 @@
 				FF1F7A67256ED32800FA5CE5 /* ModuleBuilder.swift in Sources */,
 				FF1F7A00256EC36D00FA5CE5 /* AppDelegate.swift in Sources */,
 				FF1F7A95256EF5D900FA5CE5 /* NetworkService.swift in Sources */,
+				FF1F7AB3256FA7BC00FA5CE5 /* DetailPresenter.swift in Sources */,
 				FF1F7AA5256EF8F900FA5CE5 /* CountryServise.swift in Sources */,
 				FF1F7A9D256EF61200FA5CE5 /* NetworkErrors.swift in Sources */,
 			);
