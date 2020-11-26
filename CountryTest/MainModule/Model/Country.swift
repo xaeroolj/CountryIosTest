@@ -45,7 +45,7 @@ struct Country: Codable, CountryViewProtocol {
 
 struct Currency: Codable {
     let code: String
-    let name: String
+    let name: String?
     let symbol: String
 }
 

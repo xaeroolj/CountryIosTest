@@ -34,6 +34,8 @@ class ModuleBuilder: BuilderProtocol {
                                         countryCode: countryCode)
         view.presenter = presenter
         
+        presenter.getCountry(for: countryCode); #warning("only for test")
+        
         return view
         
     }

@@ -25,7 +25,7 @@ class MainViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.dataSource = self
-//        tableView.delegate = self
+        tableView.delegate = self
         tableView.register(UITableViewCell.self,
                            forCellReuseIdentifier: K.CellIdentifiers.mainModuleCell)
         
@@ -45,7 +45,7 @@ extension MainViewController: MainViewProtocol {
     func showError(_ error: NetworkError) {
         // TODO: Create allert view
         #warning("TODO: Create allert view")
-        print(error.localizedDescription)
+        print(error)
     }
 }
 
@@ -64,6 +64,12 @@ extension MainViewController: UITableViewDataSource {
         cell.detailTextLabel?.text = country?.countryCode
         return cell
     }
-    
-    
+}
+
+extension MainViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let country = presenter.countryArray?[indexPath.row]
+        let detailViewController = ModuleBuilder.createDetailModule(countryCode: country!.countryCode)
+        navigationController?.pushViewController(detailViewController, animated: true)
+    }
 }

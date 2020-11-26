@@ -46,7 +46,7 @@ extension DetailViewController: DetailViewProtocol {
     func showError(_ error: NetworkError) {
         // TODO: Create allert view
         #warning("TODO: Create allert view")
-        print(error.localizedDescription)
+        print(error)
     }
     
      
