@@ -8,7 +8,7 @@
 import XCTest
 @testable import CountryTest
 
-class MockView: MainViewProtocol {
+class MockMainView: MainViewProtocol {
     
     func updateView() {
         
@@ -20,7 +20,7 @@ class MockView: MainViewProtocol {
     
 }
 
-class MockDataService: CountryServiceForMainViewProtocol {
+class MockMainDataService: CountryServiceForMainViewProtocol {
     
     var countryes: [Country]!
     
@@ -29,8 +29,6 @@ class MockDataService: CountryServiceForMainViewProtocol {
         self.init()
         self.countryes = countryes
     }
-    
-    
     
     func getCountryBy(name: String, completion: @escaping (Result<[Country], NetworkError>) -> Void) {
         if let countryes = countryes {
@@ -44,7 +42,7 @@ class MockDataService: CountryServiceForMainViewProtocol {
 
 class MainPresenterTests: XCTestCase {
 
-    var view: MockView!
+    var view: MockMainView!
     var presenter: MainPresenter!
     var dataService: CountryServiceForMainViewProtocol!
     var router: RouterProtocol!
@@ -62,6 +60,7 @@ class MainPresenterTests: XCTestCase {
         presenter = nil
         router = nil
     }
+    
     func testGetCountryBySuccess() throws {
         let country = Country(countryName: "foo",
                               countryCode: "baz",
@@ -71,8 +70,8 @@ class MainPresenterTests: XCTestCase {
                               countryCurrencies: [],
                               countryBorders: [])
         
-        view = MockView()
-        dataService = MockDataService(countryes: [country])
+        view = MockMainView()
+        dataService = MockMainDataService(countryes: [country])
         presenter = MainPresenter(view: view, dataService: dataService, router: router)
         var catchCountryes: [Country]?
         
@@ -98,8 +97,8 @@ class MainPresenterTests: XCTestCase {
 //                              countryCurrencies: [],
 //                              countryBorders: [])
         
-        view = MockView()
-        dataService = MockDataService()
+        view = MockMainView()
+        dataService = MockMainDataService()
         presenter = MainPresenter(view: view, dataService: dataService, router: router)
         
         var catchError: NetworkError?
