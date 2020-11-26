@@ -7,11 +7,18 @@
 
 import Foundation
 
-protocol CountryServiseProtocol {
-    
+typealias CountryServiseProtocol = CountryServiceForMainViewProtocol & CountryServiceForDetailViewProtocol
+
+protocol CountryServiceForDetailViewProtocol {
     func getCountryFor(code: String, completion: @escaping (Result<Country, NetworkError>) -> Void)
+}
+
+protocol CountryServiceForMainViewProtocol {
     func getCountryBy(name: String, completion: @escaping (Result<[Country], NetworkError>) -> Void)
 }
+
+
+
 
 final public class CountryServise: CountryServiseProtocol {
 

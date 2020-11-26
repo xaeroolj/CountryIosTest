@@ -20,10 +20,7 @@ class MockView: MainViewProtocol {
     
 }
 
-class MockDataService: CountryServiseProtocol {
-    func getCountryFor(code: String, completion: @escaping (Result<Country, NetworkError>) -> Void) {
-        
-    }
+class MockDataService: CountryServiceForMainViewProtocol {
     
     func getCountryBy(name: String, completion: @escaping (Result<[Country], NetworkError>) -> Void) {
         
@@ -35,7 +32,7 @@ class MainPresenterTests: XCTestCase {
 
     var view: MockView!
     var presenter: MainPresenter!
-    var dataService: CountryServiseProtocol!
+    var dataService: CountryServiceForMainViewProtocol!
     
     override func setUpWithError() throws {
         view = MockView()
