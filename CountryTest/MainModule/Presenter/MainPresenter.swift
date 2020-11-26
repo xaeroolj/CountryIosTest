@@ -13,23 +13,28 @@ protocol MainViewProtocol: AnyObject {
 }
 
 protocol MainViewPresenterProtocol: AnyObject  {
-    init(view: MainViewProtocol, dataService: CountryServiceForMainViewProtocol)
+    init(view: MainViewProtocol, dataService: CountryServiceForMainViewProtocol, router: RouterProtocol)
     
     func getCountry(for name: String)
+    func tapOnCountry(country: CountryMainViewProtocol)
     
     var countryArray: [CountryMainViewProtocol]? { get set }
 }
 
 class MainPresenter: MainViewPresenterProtocol {
+    
+    
 
     weak var view: MainViewProtocol?
+    var router: RouterProtocol?
     let dataService: CountryServiceForMainViewProtocol!
     
     var countryArray: [CountryMainViewProtocol]?
 
-    required init(view: MainViewProtocol, dataService: CountryServiceForMainViewProtocol) {
+    required init(view: MainViewProtocol, dataService: CountryServiceForMainViewProtocol, router: RouterProtocol) {
         self.view = view
         self.dataService = dataService
+        self.router = router
         
     }
     
@@ -43,6 +48,10 @@ class MainPresenter: MainViewPresenterProtocol {
                 } catch { self.view?.showError(error as! NetworkError) }
             }
         }
+    }
+    
+    func tapOnCountry(country: CountryMainViewProtocol) {
+        router?.showDetail(country: country)
     }
     
     

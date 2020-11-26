@@ -69,7 +69,6 @@ extension MainViewController: UITableViewDataSource {
 extension MainViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let country = presenter.countryArray?[indexPath.row]
-        let detailViewController = ModuleBuilder.createDetailModule(countryCode: country!.countryCode)
-        navigationController?.pushViewController(detailViewController, animated: true)
+        presenter.tapOnCountry(country: country!)
     }
 }

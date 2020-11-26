@@ -14,7 +14,7 @@
 		FF1F7A4B256EC81B00FA5CE5 /* MainPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF1F7A4A256EC81B00FA5CE5 /* MainPresenter.swift */; };
 		FF1F7A54256ECAF400FA5CE5 /* Country.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF1F7A53256ECAF400FA5CE5 /* Country.swift */; };
 		FF1F7A62256ED13200FA5CE5 /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FF1F7A61256ED13200FA5CE5 /* MainViewController.xib */; };
-		FF1F7A67256ED32800FA5CE5 /* ModuleBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF1F7A66256ED32800FA5CE5 /* ModuleBuilder.swift */; };
+		FF1F7A67256ED32800FA5CE5 /* AssemblyModuleBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF1F7A66256ED32800FA5CE5 /* AssemblyModuleBuilder.swift */; };
 		FF1F7A72256EDAFC00FA5CE5 /* MainPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF1F7A71256EDAFC00FA5CE5 /* MainPresenterTests.swift */; };
 		FF1F7A8C256EF5B100FA5CE5 /* Resource.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF1F7A8B256EF5B100FA5CE5 /* Resource.swift */; };
 		FF1F7A95256EF5D900FA5CE5 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF1F7A94256EF5D900FA5CE5 /* NetworkService.swift */; };
@@ -26,6 +26,7 @@
 		FF1F7AB3256FA7BC00FA5CE5 /* DetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF1F7AB2256FA7BC00FA5CE5 /* DetailPresenter.swift */; };
 		FF1F7ABE256FBF1400FA5CE5 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF1F7ABC256FBF1400FA5CE5 /* DetailViewController.swift */; };
 		FF1F7ABF256FBF1400FA5CE5 /* DetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FF1F7ABD256FBF1400FA5CE5 /* DetailViewController.xib */; };
+		FF1F7ACA256FD0CE00FA5CE5 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF1F7AC9256FD0CE00FA5CE5 /* Router.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,7 +51,7 @@
 		FF1F7A4A256EC81B00FA5CE5 /* MainPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPresenter.swift; sourceTree = "<group>"; };
 		FF1F7A53256ECAF400FA5CE5 /* Country.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Country.swift; sourceTree = "<group>"; };
 		FF1F7A61256ED13200FA5CE5 /* MainViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainViewController.xib; sourceTree = "<group>"; };
-		FF1F7A66256ED32800FA5CE5 /* ModuleBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModuleBuilder.swift; sourceTree = "<group>"; };
+		FF1F7A66256ED32800FA5CE5 /* AssemblyModuleBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssemblyModuleBuilder.swift; sourceTree = "<group>"; };
 		FF1F7A71256EDAFC00FA5CE5 /* MainPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPresenterTests.swift; sourceTree = "<group>"; };
 		FF1F7A8B256EF5B100FA5CE5 /* Resource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Resource.swift; sourceTree = "<group>"; };
 		FF1F7A94256EF5D900FA5CE5 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
@@ -62,6 +63,7 @@
 		FF1F7AB2256FA7BC00FA5CE5 /* DetailPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPresenter.swift; sourceTree = "<group>"; };
 		FF1F7ABC256FBF1400FA5CE5 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		FF1F7ABD256FBF1400FA5CE5 /* DetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailViewController.xib; sourceTree = "<group>"; };
+		FF1F7AC9256FD0CE00FA5CE5 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,7 +106,8 @@
 			isa = PBXGroup;
 			children = (
 				FF1F7AAB256F000900FA5CE5 /* Helpers */,
-				FF1F7A66256ED32800FA5CE5 /* ModuleBuilder.swift */,
+				FF1F7A66256ED32800FA5CE5 /* AssemblyModuleBuilder.swift */,
+				FF1F7AC9256FD0CE00FA5CE5 /* Router.swift */,
 				FF1F7A8F256EF5B500FA5CE5 /* NetworkLayer */,
 				FF1F7AA8256EF90000FA5CE5 /* Services */,
 				FF1F7AB6256FABB800FA5CE5 /* DetailModule */,
@@ -331,7 +334,8 @@
 				FF1F7AAF256F001900FA5CE5 /* UrlConstructor.swift in Sources */,
 				FF1F7A8C256EF5B100FA5CE5 /* Resource.swift in Sources */,
 				FF1F7AA1256EF64600FA5CE5 /* Constants.swift in Sources */,
-				FF1F7A67256ED32800FA5CE5 /* ModuleBuilder.swift in Sources */,
+				FF1F7ACA256FD0CE00FA5CE5 /* Router.swift in Sources */,
+				FF1F7A67256ED32800FA5CE5 /* AssemblyModuleBuilder.swift in Sources */,
 				FF1F7A00256EC36D00FA5CE5 /* AppDelegate.swift in Sources */,
 				FF1F7A95256EF5D900FA5CE5 /* NetworkService.swift in Sources */,
 				FF1F7AB3256FA7BC00FA5CE5 /* DetailPresenter.swift in Sources */,

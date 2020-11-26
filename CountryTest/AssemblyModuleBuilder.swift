@@ -1,5 +1,5 @@
 //
-//  ModuleBuilder.swift
+//  AssemblyModuleBuilder.swift
 //  CountryTest
 //
 //  Created by Roman Trekhlebov on 25.11.2020.
@@ -7,18 +7,18 @@
 
 import UIKit
 
-protocol BuilderProtocol {
-    static func createMainModule() -> UIViewController
-    static func createDetailModule(countryCode: String) -> UIViewController
+protocol AssemblyBuilderProtocol {
+    func createMainModule(router: RouterProtocol) -> UIViewController
+    func createDetailModule(countryCode: String, router: RouterProtocol) -> UIViewController
 }
 
 
-class ModuleBuilder: BuilderProtocol {
+class AssemblyModuleBuilder: AssemblyBuilderProtocol {
     
-    static func createMainModule() -> UIViewController {
+    func createMainModule(router: RouterProtocol) -> UIViewController {
         let view = MainViewController()
         let dataService = CountryServise()
-        let presenter = MainPresenter(view: view, dataService: dataService)
+        let presenter = MainPresenter(view: view, dataService: dataService, router: router)
         view.presenter = presenter
         
         presenter.getCountry(for: "ru"); #warning("only for test")
@@ -26,18 +26,18 @@ class ModuleBuilder: BuilderProtocol {
         return view
     }
     
-    static func createDetailModule(countryCode: String) -> UIViewController {
+    func createDetailModule(countryCode: String, router: RouterProtocol) -> UIViewController {
         let view = DetailViewController()
         let dataService = CountryServise()
         let presenter = DetailPresenter(view: view,
                                         dataService: dataService,
+                                        router: router,
                                         countryCode: countryCode)
         view.presenter = presenter
         
         presenter.getCountry(for: countryCode); #warning("only for test")
         
         return view
-        
     }
     
 }

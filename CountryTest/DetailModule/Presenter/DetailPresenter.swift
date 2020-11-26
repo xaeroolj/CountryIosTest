@@ -14,28 +14,31 @@ protocol DetailViewProtocol: AnyObject {
 
 protocol DetailViewPresenterProtocol: AnyObject  {
     init(view: DetailViewProtocol, dataService: CountryServiceForDetailViewProtocol,
+         router: RouterProtocol,
          countryCode: String)
     
     var country: CountryDetailViewProtocol? { get set }
-
     
     func getCountry(for code: String)
+    func backToRoot()
 }
 
 
 class DetailPresenter: DetailViewPresenterProtocol {
     
     weak var view: DetailViewProtocol?
+    var router: RouterProtocol?
     let dataService: CountryServiceForDetailViewProtocol!
     var countryCode: String?
     
     var country: CountryDetailViewProtocol?
 
-    
     required init(view: DetailViewProtocol, dataService: CountryServiceForDetailViewProtocol,
+                  router: RouterProtocol,
                   countryCode: String) {
         self.view = view
         self.dataService = dataService
+        self.router = router
         self.countryCode = countryCode
     }
     
@@ -49,5 +52,9 @@ class DetailPresenter: DetailViewPresenterProtocol {
                 } catch { self.view?.showError(error as! NetworkError) }
             }
         }
+    }
+    
+    func backToRoot() {
+        router?.popToRoot()
     }
 }

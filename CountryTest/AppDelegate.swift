@@ -16,9 +16,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         window = UIWindow(frame: UIScreen.main.bounds)
         
-        let mainViewController = ModuleBuilder.createMainModule()
-        let navigationController = UINavigationController(rootViewController: mainViewController)
+        let navigationController = UINavigationController()
+        let assemblyBuilder = AssemblyModuleBuilder()
+        let router = Router(navigationController: navigationController, assemblyBuilder: assemblyBuilder)
         window?.rootViewController = navigationController
+        router.initialViewController()
         window?.makeKeyAndVisible()
         return true
     }
