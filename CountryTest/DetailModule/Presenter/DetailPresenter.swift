@@ -25,7 +25,7 @@ protocol DetailViewPresenterProtocol: AnyObject  {
     var requestedCountryCode: String? { get}
     
     func getCountry()
-    func getCountry(for code: String)
+    func getCountryFor(code: String)
     func backToRoot()
 }
 
@@ -63,7 +63,7 @@ class DetailPresenter: DetailViewPresenterProtocol {
         self.view?.updateView()
     }
     
-    func getCountry(for code: String) {
+    func getCountryFor(code: String) {
         dataService.getCountryFor(code: code) { [weak self] result in
             guard let self = self else { return }
             DispatchQueue.main.async {

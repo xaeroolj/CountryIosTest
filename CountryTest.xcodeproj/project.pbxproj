@@ -126,8 +126,8 @@
 			isa = PBXGroup;
 			children = (
 				FF1F7A18256EC37600FA5CE5 /* Info.plist */,
-				FF1F7A79256EDB0200FA5CE5 /* MainModuleTests */,
 				FF1F7ACF25701E1200FA5CE5 /* RouterTests.swift */,
+				FF1F7A79256EDB0200FA5CE5 /* MainModuleTests */,
 			);
 			path = CountryTestTests;
 			sourceTree = "<group>";

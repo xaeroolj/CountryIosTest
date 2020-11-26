@@ -8,28 +8,18 @@
 import XCTest
 @testable import CountryTest
 
-class MockNavigationControll: UINavigationController {
-    var presentedVC: UIViewController!
-    
-    override func pushViewController(_ viewController: UIViewController, animated: Bool) {
-
-        self.presentedVC = viewController
-
-        super.pushViewController(presentedVC, animated: animated)
-    }
-}
-
 class RouterTests: XCTestCase {
     var router: RouterProtocol!
-    var navigatioController:MockNavigationControll!
+    var navigatioController: UINavigationController!
     var assembly: AssemblyModuleBuilder!
 
     override func setUpWithError() throws {
         
-        navigatioController = MockNavigationControll()
+        navigatioController = UINavigationController()
         assembly = AssemblyModuleBuilder()
         router = Router(navigationController: navigatioController, assemblyBuilder: assembly)
     }
+     
 
     override func tearDownWithError() throws {
         router = nil
@@ -53,19 +43,28 @@ class RouterTests: XCTestCase {
                               countryCurrencies: [],
                               countryBorders: [])
         router.showDetail(country: country)
-        let detailVC = navigatioController.presentedVC
-        XCTAssertNotNil(detailVC)
-        XCTAssertTrue(detailVC is DetailViewController)
+        
+        let visibleVC = navigatioController.visibleViewController
+        XCTAssertNotNil(visibleVC)
+        XCTAssertTrue(visibleVC is DetailViewController)
     }
 
     func testShowNewDetail() {
         
         router.showNewCountryDetail(code: "Foo")
-        let detailVC = navigatioController.presentedVC
-        XCTAssertNotNil(detailVC)
-        XCTAssertTrue(detailVC is DetailViewController)
+        
+        let visibleVC = navigatioController.visibleViewController
+        XCTAssertNotNil(visibleVC)
+        XCTAssertTrue(visibleVC is DetailViewController)
     }
     
+    func testPopToRoot() {
+        router.initialViewController()
+        router.popToRoot()
+        let visibleVC = navigatioController.visibleViewController
+        XCTAssertNotNil(visibleVC)
+        XCTAssertTrue(visibleVC is MainViewController)
+    }
     
 
 }

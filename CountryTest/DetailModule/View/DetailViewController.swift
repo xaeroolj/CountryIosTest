@@ -25,7 +25,7 @@ class DetailViewController: UIViewController {
         super.viewDidLoad()
         
         if let code = presenter.requestedCountryCode {
-            presenter.getCountry(for: code)
+            presenter.getCountryFor(code: code)
         } else {
             presenter.getCountry()
         }
@@ -34,7 +34,6 @@ class DetailViewController: UIViewController {
     // MARK: - Public Methods
     // MARK: - Private Methods
     // MARK: - IBActions
-    
     
 }
 extension DetailViewController: DetailViewProtocol {
