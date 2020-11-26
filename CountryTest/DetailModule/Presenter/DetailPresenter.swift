@@ -15,31 +15,52 @@ protocol DetailViewProtocol: AnyObject {
 protocol DetailViewPresenterProtocol: AnyObject  {
     init(view: DetailViewProtocol, dataService: CountryServiceForDetailViewProtocol,
          router: RouterProtocol,
-         countryCode: String)
+         country: CountryDetailViewProtocol?)
+    
+    init(view: DetailViewProtocol, dataService: CountryServiceForDetailViewProtocol,
+                     router: RouterProtocol,
+                     countryCode: String?)
     
     var country: CountryDetailViewProtocol? { get set }
+    var requestedCountryCode: String? { get}
     
+    func getCountry()
     func getCountry(for code: String)
     func backToRoot()
 }
 
 
 class DetailPresenter: DetailViewPresenterProtocol {
-    
+
     weak var view: DetailViewProtocol?
     var router: RouterProtocol?
     let dataService: CountryServiceForDetailViewProtocol!
-    var countryCode: String?
+    var requestedCountryCode: String?
     
     var country: CountryDetailViewProtocol?
 
     required init(view: DetailViewProtocol, dataService: CountryServiceForDetailViewProtocol,
                   router: RouterProtocol,
-                  countryCode: String) {
+                  country: CountryDetailViewProtocol?) {
         self.view = view
         self.dataService = dataService
         self.router = router
-        self.countryCode = countryCode
+        self.country = country
+        
+        
+    }
+    
+    required convenience init(view: DetailViewProtocol, dataService: CountryServiceForDetailViewProtocol,
+                     router: RouterProtocol,
+                     countryCode: String?) {
+        self.init(view: view, dataService: dataService, router: router, country: nil)
+        self.requestedCountryCode = countryCode
+        
+        
+    }
+    
+    func getCountry() {
+        self.view?.updateView()
     }
     
     func getCountry(for code: String) {

@@ -14,11 +14,14 @@ protocol RouterMain {
 
 protocol RouterProtocol: RouterMain {
     func initialViewController()
-    func showDetail(country: CountryMainViewProtocol)
+    func showDetail(country: CountryDetailViewProtocol)
+    func showNewCountryDetail(code: String)
     func popToRoot()
 }
 
 class Router: RouterProtocol {
+    
+    
     
     var navigationController: UINavigationController?
     var assemblyBuilder: AssemblyBuilderProtocol?
@@ -36,9 +39,16 @@ class Router: RouterProtocol {
         }
     }
     
-    func showDetail(country: CountryMainViewProtocol) {
+    func showDetail(country: CountryDetailViewProtocol) {
         if let navigationController = navigationController {
-            guard let detailViewController = assemblyBuilder?.createDetailModule(countryCode: country.countryCode, router: self) else { return }
+            guard let detailViewController = assemblyBuilder?.createDetailModule(country: country, router: self) else { return }
+            navigationController.pushViewController(detailViewController, animated: true)
+        }
+    }
+    
+    func showNewCountryDetail(code: String) {
+        if let navigationController = navigationController {
+            guard let detailViewController = assemblyBuilder?.createNewDetailModule(code: code, router: self) else { return }
             navigationController.pushViewController(detailViewController, animated: true)
         }
     }

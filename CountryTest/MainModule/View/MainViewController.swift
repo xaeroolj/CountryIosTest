@@ -30,6 +30,10 @@ class MainViewController: UIViewController {
                            forCellReuseIdentifier: K.CellIdentifiers.mainModuleCell)
         
     }
+    override func viewDidAppear(_ animated: Bool) {
+        presenter.getCountry(for: "ru")
+
+    }
     
     // MARK: - Public Methods
     // MARK: - Private Methods
@@ -69,6 +73,6 @@ extension MainViewController: UITableViewDataSource {
 extension MainViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let country = presenter.countryArray?[indexPath.row]
-        presenter.tapOnCountry(country: country!)
+        presenter.tapOnCountry(country: country as! CountryDetailViewProtocol)
     }
 }

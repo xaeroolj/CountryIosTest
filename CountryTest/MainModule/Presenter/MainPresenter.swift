@@ -16,14 +16,12 @@ protocol MainViewPresenterProtocol: AnyObject  {
     init(view: MainViewProtocol, dataService: CountryServiceForMainViewProtocol, router: RouterProtocol)
     
     func getCountry(for name: String)
-    func tapOnCountry(country: CountryMainViewProtocol)
+    func tapOnCountry(country: CountryDetailViewProtocol)
     
     var countryArray: [CountryMainViewProtocol]? { get set }
 }
 
 class MainPresenter: MainViewPresenterProtocol {
-    
-    
 
     weak var view: MainViewProtocol?
     var router: RouterProtocol?
@@ -50,7 +48,7 @@ class MainPresenter: MainViewPresenterProtocol {
         }
     }
     
-    func tapOnCountry(country: CountryMainViewProtocol) {
+    func tapOnCountry(country: CountryDetailViewProtocol) {
         router?.showDetail(country: country)
     }
     

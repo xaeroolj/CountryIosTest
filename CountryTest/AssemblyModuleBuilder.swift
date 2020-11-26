@@ -9,11 +9,15 @@ import UIKit
 
 protocol AssemblyBuilderProtocol {
     func createMainModule(router: RouterProtocol) -> UIViewController
-    func createDetailModule(countryCode: String, router: RouterProtocol) -> UIViewController
+    func createDetailModule(country: CountryDetailViewProtocol?, router: RouterProtocol) -> UIViewController
+    func createNewDetailModule(code: String?, router: RouterProtocol) -> UIViewController
 }
 
 
 class AssemblyModuleBuilder: AssemblyBuilderProtocol {
+    
+    
+    
     
     func createMainModule(router: RouterProtocol) -> UIViewController {
         let view = MainViewController()
@@ -21,21 +25,31 @@ class AssemblyModuleBuilder: AssemblyBuilderProtocol {
         let presenter = MainPresenter(view: view, dataService: dataService, router: router)
         view.presenter = presenter
         
-        presenter.getCountry(for: "ru"); #warning("only for test")
         
         return view
     }
     
-    func createDetailModule(countryCode: String, router: RouterProtocol) -> UIViewController {
+    func createDetailModule(country: CountryDetailViewProtocol?, router: RouterProtocol) -> UIViewController {
         let view = DetailViewController()
         let dataService = CountryServise()
         let presenter = DetailPresenter(view: view,
                                         dataService: dataService,
                                         router: router,
-                                        countryCode: countryCode)
+                                        country: country)
         view.presenter = presenter
+                
+        return view
+    }
+    
+    func createNewDetailModule(code: String?, router: RouterProtocol) -> UIViewController {
+        let view = DetailViewController()
+        let dataService = CountryServise()
         
-        presenter.getCountry(for: countryCode); #warning("only for test")
+        let presenter = DetailPresenter(view: view,
+                                        dataService: dataService,
+                                        router: router,
+                                        countryCode: code)
+        view.presenter = presenter
         
         return view
     }

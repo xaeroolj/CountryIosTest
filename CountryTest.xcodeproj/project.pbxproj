@@ -27,6 +27,7 @@
 		FF1F7ABE256FBF1400FA5CE5 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF1F7ABC256FBF1400FA5CE5 /* DetailViewController.swift */; };
 		FF1F7ABF256FBF1400FA5CE5 /* DetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FF1F7ABD256FBF1400FA5CE5 /* DetailViewController.xib */; };
 		FF1F7ACA256FD0CE00FA5CE5 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF1F7AC9256FD0CE00FA5CE5 /* Router.swift */; };
+		FF1F7AD025701E1300FA5CE5 /* RouterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF1F7ACF25701E1200FA5CE5 /* RouterTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,6 +65,7 @@
 		FF1F7ABC256FBF1400FA5CE5 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		FF1F7ABD256FBF1400FA5CE5 /* DetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailViewController.xib; sourceTree = "<group>"; };
 		FF1F7AC9256FD0CE00FA5CE5 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
+		FF1F7ACF25701E1200FA5CE5 /* RouterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouterTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,6 +127,7 @@
 			children = (
 				FF1F7A18256EC37600FA5CE5 /* Info.plist */,
 				FF1F7A79256EDB0200FA5CE5 /* MainModuleTests */,
+				FF1F7ACF25701E1200FA5CE5 /* RouterTests.swift */,
 			);
 			path = CountryTestTests;
 			sourceTree = "<group>";
@@ -349,6 +352,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FF1F7AD025701E1300FA5CE5 /* RouterTests.swift in Sources */,
 				FF1F7A72256EDAFC00FA5CE5 /* MainPresenterTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

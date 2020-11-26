@@ -24,8 +24,13 @@ class DetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
+        if let code = presenter.requestedCountryCode {
+            presenter.getCountry(for: code)
+        } else {
+            presenter.getCountry()
+        }
     }
+    
     // MARK: - Public Methods
     // MARK: - Private Methods
     // MARK: - IBActions
