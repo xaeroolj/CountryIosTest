@@ -16,6 +16,9 @@ protocol DetailViewPresenterProtocol: AnyObject  {
     init(view: DetailViewProtocol, dataService: CountryServiceForDetailViewProtocol,
          countryCode: String)
     
+    var country: CountryDetailViewProtocol? { get set }
+
+    
     func getCountry(for code: String)
 }
 

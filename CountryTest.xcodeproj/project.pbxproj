@@ -24,6 +24,8 @@
 		FF1F7AA5256EF8F900FA5CE5 /* CountryServise.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF1F7AA4256EF8F900FA5CE5 /* CountryServise.swift */; };
 		FF1F7AAF256F001900FA5CE5 /* UrlConstructor.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF1F7AAE256F001900FA5CE5 /* UrlConstructor.swift */; };
 		FF1F7AB3256FA7BC00FA5CE5 /* DetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF1F7AB2256FA7BC00FA5CE5 /* DetailPresenter.swift */; };
+		FF1F7ABE256FBF1400FA5CE5 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF1F7ABC256FBF1400FA5CE5 /* DetailViewController.swift */; };
+		FF1F7ABF256FBF1400FA5CE5 /* DetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FF1F7ABD256FBF1400FA5CE5 /* DetailViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +60,8 @@
 		FF1F7AA4256EF8F900FA5CE5 /* CountryServise.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryServise.swift; sourceTree = "<group>"; };
 		FF1F7AAE256F001900FA5CE5 /* UrlConstructor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UrlConstructor.swift; sourceTree = "<group>"; };
 		FF1F7AB2256FA7BC00FA5CE5 /* DetailPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPresenter.swift; sourceTree = "<group>"; };
+		FF1F7ABC256FBF1400FA5CE5 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		FF1F7ABD256FBF1400FA5CE5 /* DetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -196,6 +200,7 @@
 		FF1F7AB6256FABB800FA5CE5 /* DetailModule */ = {
 			isa = PBXGroup;
 			children = (
+				FF1F7AC2256FBF1B00FA5CE5 /* View */,
 				FF1F7AB7256FABC600FA5CE5 /* Presenter */,
 			);
 			path = DetailModule;
@@ -207,6 +212,15 @@
 				FF1F7AB2256FA7BC00FA5CE5 /* DetailPresenter.swift */,
 			);
 			path = Presenter;
+			sourceTree = "<group>";
+		};
+		FF1F7AC2256FBF1B00FA5CE5 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				FF1F7ABC256FBF1400FA5CE5 /* DetailViewController.swift */,
+				FF1F7ABD256FBF1400FA5CE5 /* DetailViewController.xib */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -292,6 +306,7 @@
 				FF1F7A0C256EC37500FA5CE5 /* LaunchScreen.storyboard in Resources */,
 				FF1F7A09256EC37500FA5CE5 /* Assets.xcassets in Resources */,
 				FF1F7A62256ED13200FA5CE5 /* MainViewController.xib in Resources */,
+				FF1F7ABF256FBF1400FA5CE5 /* DetailViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -322,6 +337,7 @@
 				FF1F7AB3256FA7BC00FA5CE5 /* DetailPresenter.swift in Sources */,
 				FF1F7AA5256EF8F900FA5CE5 /* CountryServise.swift in Sources */,
 				FF1F7A9D256EF61200FA5CE5 /* NetworkErrors.swift in Sources */,
+				FF1F7ABE256FBF1400FA5CE5 /* DetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
