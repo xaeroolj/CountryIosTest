@@ -7,13 +7,13 @@
 
 import Foundation
 
-protocol MainViewProtocol: class {
+protocol MainViewProtocol: AnyObject {
     func updateView()
     func showError(_ error: NetworkError)
 }
 
-protocol MainViewPresenterProtocol: class  {
-    init(view: MainViewProtocol, dataService: CountryServiseProtocol)
+protocol MainViewPresenterProtocol: AnyObject  {
+    init(view: MainViewProtocol, dataService: CountryServiceForMainViewProtocol)
     
     func getCountry(for name: String)
     
@@ -23,11 +23,11 @@ protocol MainViewPresenterProtocol: class  {
 class MainPresenter: MainViewPresenterProtocol {
 
     weak var view: MainViewProtocol?
-    let dataService: CountryServiseProtocol!
+    let dataService: CountryServiceForMainViewProtocol!
     
     var countryArray: [CountryCellProtocol]?
 
-    required init(view: MainViewProtocol, dataService: CountryServiseProtocol) {
+    required init(view: MainViewProtocol, dataService: CountryServiceForMainViewProtocol) {
         self.view = view
         self.dataService = dataService
         
