@@ -17,7 +17,7 @@ protocol MainViewPresenterProtocol: AnyObject  {
     
     func getCountry(for name: String)
     
-    var countryArray: [CountryCellProtocol]? { get set }
+    var countryArray: [CountryMainViewProtocol]? { get set }
 }
 
 class MainPresenter: MainViewPresenterProtocol {
@@ -25,7 +25,7 @@ class MainPresenter: MainViewPresenterProtocol {
     weak var view: MainViewProtocol?
     let dataService: CountryServiceForMainViewProtocol!
     
-    var countryArray: [CountryCellProtocol]?
+    var countryArray: [CountryMainViewProtocol]?
 
     required init(view: MainViewProtocol, dataService: CountryServiceForMainViewProtocol) {
         self.view = view
