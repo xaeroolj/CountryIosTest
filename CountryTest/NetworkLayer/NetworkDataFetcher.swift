@@ -22,7 +22,8 @@ class NetworkDataFetcher: DataFetcher {
     func fetchGenericJsonData<T>(resource: Resource<T>, completion: @escaping (Result<T, NetworkError>) -> Void) where T : Decodable, T : Encodable {
         networkService.request(url: resource.url, method: resource.httpMethod) { (data, error) in
             guard let data = data, error == nil else {
-                completion(.failure(.domainError))
+
+                completion(.failure(error as! NetworkError))
                 return
             }
             

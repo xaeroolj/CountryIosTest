@@ -10,5 +10,6 @@ import Foundation
 enum NetworkError: Error {
     case decodingError
     case domainError
+    case notFound
     case badUrlError
 }

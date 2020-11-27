@@ -24,33 +24,65 @@ class MainViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        searchTextField.delegate = self
         tableView.dataSource = self
         tableView.delegate = self
         tableView.register(UITableViewCell.self,
                            forCellReuseIdentifier: K.CellIdentifiers.mainModuleCell)
         
-    }
-    override func viewDidAppear(_ animated: Bool) {
-        presenter.getCountry(for: "ru")
-
+        updateBackground(with: K.ConstantStrings.begin)
     }
     
     // MARK: - Public Methods
     // MARK: - Private Methods
+    
+    private func updateBackground(with message: String?) {
+        
+        guard let message = message else {
+            tableView.backgroundView  = nil
+            tableView.separatorStyle  = .singleLine
+            return
+        }
+        
+        let backgroundLbl: UILabel  = UILabel(frame: CGRect(x: 0, y: 0, width: tableView.bounds.size.width, height: tableView.bounds.size.height))
+        backgroundLbl.text          = message
+        backgroundLbl.textColor     = UIColor.black
+        backgroundLbl.textAlignment = .center
+        backgroundLbl.numberOfLines = 0
+        tableView.backgroundView  = backgroundLbl
+        tableView.separatorStyle  = .none
+    }
     // MARK: - IBActions
     
 }
 
 extension MainViewController: MainViewProtocol {
+    
     func updateView() {
+        updateBackground(with: nil)
         tableView.reloadData()
     }
     
     func showError(_ error: NetworkError) {
         // TODO: Create allert view
         #warning("TODO: Create allert view")
+        
         print(error)
+        updateBackground(with: error.localizedDescription)
+        tableView.reloadData()
+
     }
+    
+    func initState() {
+        tableView.reloadData()
+        updateBackground(with: K.ConstantStrings.begin)
+    }
+    
+    func viewLoading() {
+        tableView.reloadData()
+        updateBackground(with: K.ConstantStrings.loading)
+    }
+
 }
 
 extension MainViewController: UITableViewDataSource {
@@ -74,5 +106,27 @@ extension MainViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let country = presenter.countryArray?[indexPath.row]
         presenter.tapOnCountry(country: country as! CountryDetailViewProtocol)
+    }
+}
+
+extension MainViewController: UITextFieldDelegate {
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        
+        
+                
+        let newString = string
+        let oldString = searchTextField.text ?? ""
+        var finalString = ""
+        
+        if string.count > 0 {
+            finalString = oldString + newString
+        }else if oldString.count > 0 {
+            finalString = String(oldString.dropLast())
+        }
+        
+        print("SEARCH FOR:\(finalString)")// pass the search String in this method
+        
+        presenter.getCountry(for: finalString)
+        return true
     }
 }

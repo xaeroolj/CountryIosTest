@@ -18,4 +18,9 @@ struct K {
     struct CellIdentifiers {
         static let mainModuleCell = "MainCell"
     }
+    
+    struct ConstantStrings {
+        static let begin = "Use search textField"
+        static let loading = "Loading..."
+    }
 }

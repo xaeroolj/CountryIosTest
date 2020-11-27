@@ -44,13 +44,13 @@ struct Country: Codable, CountryViewProtocol {
 }
 
 struct Currency: Codable {
-    let code: String
+    let code: String?
     let name: String?
-    let symbol: String
+    let symbol: String?
 }
 
 struct Language: Codable {
-    let name: String
-    let nativeName: String
+    let name: String?
+    let nativeName: String?
 }
 
