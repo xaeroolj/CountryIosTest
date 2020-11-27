@@ -28,6 +28,7 @@ class DetailViewController: UIViewController {
             presenter.getCountryFor(code: code)
         } else {
             presenter.getCountry()
+            
         }
     }
     
@@ -35,6 +36,14 @@ class DetailViewController: UIViewController {
     // MARK: - Private Methods
     // MARK: - IBActions
     
+    @IBAction func newWindowPressed(_ sender: Any) {
+        presenter.showNewCountryWith(code: "rus")
+        
+    }
+    
+    @IBAction func toMainPressed(_ sender: Any) {
+        presenter.backToRoot()
+    }
 }
 extension DetailViewController: DetailViewProtocol {
     func updateView() {
