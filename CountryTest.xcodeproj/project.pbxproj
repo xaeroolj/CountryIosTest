@@ -30,6 +30,7 @@
 		FF1F7AD025701E1300FA5CE5 /* RouterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF1F7ACF25701E1200FA5CE5 /* RouterTests.swift */; };
 		FF1F7AD4257045D000FA5CE5 /* DetailPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF1F7AD3257045D000FA5CE5 /* DetailPresenterTests.swift */; };
 		FF1F7AE22571709400FA5CE5 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF1F7AE12571709300FA5CE5 /* String+Extension.swift */; };
+		FF1F7AEF2571737D00FA5CE5 /* UIViewController+Extension .swift in Sources */ = {isa = PBXBuildFile; fileRef = FF1F7AEE2571737C00FA5CE5 /* UIViewController+Extension .swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,6 +71,7 @@
 		FF1F7ACF25701E1200FA5CE5 /* RouterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouterTests.swift; sourceTree = "<group>"; };
 		FF1F7AD3257045D000FA5CE5 /* DetailPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPresenterTests.swift; sourceTree = "<group>"; };
 		FF1F7AE12571709300FA5CE5 /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
+		FF1F7AEE2571737C00FA5CE5 /* UIViewController+Extension .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension .swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -247,6 +249,7 @@
 			isa = PBXGroup;
 			children = (
 				FF1F7AE12571709300FA5CE5 /* String+Extension.swift */,
+				FF1F7AEE2571737C00FA5CE5 /* UIViewController+Extension .swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -360,6 +363,7 @@
 				FF1F7AE22571709400FA5CE5 /* String+Extension.swift in Sources */,
 				FF1F7A8C256EF5B100FA5CE5 /* Resource.swift in Sources */,
 				FF1F7AA1256EF64600FA5CE5 /* Constants.swift in Sources */,
+				FF1F7AEF2571737D00FA5CE5 /* UIViewController+Extension .swift in Sources */,
 				FF1F7ACA256FD0CE00FA5CE5 /* Router.swift in Sources */,
 				FF1F7A67256ED32800FA5CE5 /* AssemblyModuleBuilder.swift in Sources */,
 				FF1F7A00256EC36D00FA5CE5 /* AppDelegate.swift in Sources */,

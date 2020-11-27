@@ -24,17 +24,21 @@ class MainViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        searchTextField.delegate = self
-        tableView.dataSource = self
-        tableView.delegate = self
-        tableView.register(UITableViewCell.self,
-                           forCellReuseIdentifier: K.CellIdentifiers.mainModuleCell)
+        setupUI()
         
         updateBackground(with: K.ConstantStrings.begin)
     }
     
     // MARK: - Public Methods
     // MARK: - Private Methods
+    private func setupUI() {
+        searchTextField.delegate = self
+        tableView.dataSource = self
+        tableView.delegate = self
+        tableView.register(UITableViewCell.self,
+                           forCellReuseIdentifier: K.CellIdentifiers.mainModuleCell)
+        self.hideKeyboardWhenTappedAround()
+    }
     
     private func updateBackground(with message: String?) {
         
@@ -105,11 +109,16 @@ extension MainViewController: UITableViewDataSource {
 extension MainViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let country = presenter.countryArray?[indexPath.row]
+        tableView.deselectRow(at: indexPath, animated: false)
         presenter.tapOnCountry(country: country as! CountryDetailViewProtocol)
     }
 }
 
 extension MainViewController: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        view.endEditing(true)
+    }
+    
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         
         
