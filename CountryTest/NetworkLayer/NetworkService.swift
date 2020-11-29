@@ -47,8 +47,9 @@ class NetworkService: Networking {
                 self?.task = nil
                 self?.isLoading(false)
             }
-            
-            let response = response as! HTTPURLResponse
+            guard let response = response as? HTTPURLResponse else {
+                completion(nil, NetworkError.domainError)
+                return}
             let status = response.statusCode
             if status == 404 {
                 completion(nil, NetworkError.notFound)

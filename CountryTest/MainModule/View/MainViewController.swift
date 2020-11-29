@@ -7,6 +7,13 @@
 
 import UIKit
 
+protocol MainViewProtocol: AnyObject {
+    func updateView()
+    func showError(_ error: NetworkError)
+    func initState()
+    func viewLoading()
+}
+
 class MainViewController: UIViewController {
     // MARK: - IBOutlets
     
@@ -32,6 +39,7 @@ class MainViewController: UIViewController {
     // MARK: - Public Methods
     // MARK: - Private Methods
     private func setupUI() {
+        title = "Main"
         searchTextField.delegate = self
         tableView.dataSource = self
         tableView.delegate = self

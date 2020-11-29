@@ -7,13 +7,6 @@
 
 import Foundation
 
-protocol MainViewProtocol: AnyObject {
-    func updateView()
-    func showError(_ error: NetworkError)
-    func initState()
-    func viewLoading()
-}
-
 protocol MainViewPresenterProtocol: AnyObject  {
     init(view: MainViewProtocol, dataService: CountryServiceForMainViewProtocol, router: RouterProtocol)
     

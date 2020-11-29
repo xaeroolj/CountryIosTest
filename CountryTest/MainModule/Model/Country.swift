@@ -14,7 +14,7 @@ protocol CountryMainViewProtocol {
     var countryCode: String {get}
 }
 
-protocol CountryDetailViewProtocol {
+protocol CountryDetailViewProtocol: CountryMainViewProtocol {
     var countryFlag: String {get} //flag (.svg)
     var countryNativeName: String {get} //nativeName
     var countryLanguages: [Language] {get} // languages []

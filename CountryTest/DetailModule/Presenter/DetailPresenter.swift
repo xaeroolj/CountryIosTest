@@ -7,11 +7,6 @@
 
 import Foundation
 
-protocol DetailViewProtocol: AnyObject {
-    func updateView()
-    func showError(_ error: NetworkError)
-}
-
 protocol DetailViewPresenterProtocol: AnyObject  {
     init(view: DetailViewProtocol, dataService: CountryServiceForDetailViewProtocol,
          router: RouterProtocol,
@@ -69,6 +64,7 @@ final class DetailPresenter: DetailViewPresenterProtocol {
             DispatchQueue.main.async {
                 do {
                     self.country = try result.get()
+                    self.view?.showMainBtn()
                     self.view?.updateView()
                 } catch { self.view?.showError(error as! NetworkError) }
             }
