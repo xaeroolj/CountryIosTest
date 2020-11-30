@@ -8,3 +8,13 @@ Develop two screens:
 2. The second screen shows at least the flag, country name (with the native view), languages (with the native view), currencies and borders. When the user taps on one of the borders he can see the same detailed information about this border.
 To get the data about countries please use free API - https://restcountries.eu
 The project must have automatic tests. 
+
+===============================================
+
+Ios min version 10.3
+ios 13 dark appearance supported.
+
+pod used: 
+https://github.com/SDWebImage/SDWebImageSVGKitPlugin
+
+===============================================
