@@ -57,8 +57,12 @@ final class MainViewController: UIViewController {
         }
         
         let backgroundLbl: UILabel  = UILabel(frame: CGRect(x: 0, y: 0, width: tableView.bounds.size.width, height: tableView.bounds.size.height))
-        backgroundLbl.text          = message
-        backgroundLbl.textColor     = UIColor.black
+        backgroundLbl.text = message
+        if #available(iOS 13.0, *) {
+            backgroundLbl.textColor = UIColor.label
+        } else {
+            backgroundLbl.textColor = UIColor.black
+        }
         backgroundLbl.textAlignment = .center
         backgroundLbl.numberOfLines = 0
         tableView.backgroundView  = backgroundLbl

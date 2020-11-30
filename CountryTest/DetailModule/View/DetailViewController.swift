@@ -208,7 +208,11 @@ extension DetailViewController {
         let btn = UIButton()
         
         btn.setTitle(str, for: .normal)
-        btn.setTitleColor(.black, for: .normal)
+        if #available(iOS 13.0, *) {
+            btn.setTitleColor(.label, for: .normal)
+        } else {
+            btn.setTitleColor(.black, for: .normal)
+        }
 
         btn.addTarget(self, action: #selector(self.action(sender:)), for: .touchUpInside)
         
