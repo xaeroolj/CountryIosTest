@@ -122,7 +122,7 @@ extension DetailViewController {
     private func populateLang() {
         guard let country = presenter.country else { return }
         if !country.countryLanguages.isEmpty {
-            langStackView.removeArrangedSubview(langStackView.arrangedSubviews[0])
+            langStackView.arrangedSubviews[0].removeFromSuperview()
             
             let countryLangStrings = country.countryLanguages.map {"\($0.name ?? "None") (\($0.nativeName ?? "None"))"}
             countryLangStrings.forEach { (item) in
@@ -136,7 +136,7 @@ extension DetailViewController {
     private func populateCurrency() {
         guard let country = presenter.country else { return }
         if !country.countryCurrencies.isEmpty {
-            currencyStackView.removeArrangedSubview(currencyStackView.arrangedSubviews[0])
+            currencyStackView.arrangedSubviews[0].removeFromSuperview()
             
             let countryCurStrings = country.countryCurrencies.map {"\($0.code ?? "None") (\($0.name ?? "None"))"}
             countryCurStrings.forEach { (item) in
@@ -150,7 +150,7 @@ extension DetailViewController {
     private func populateBoarders() {
         guard let country = presenter.country else { return }
         if !country.countryBorders.isEmpty {
-            bordersStackView.removeArrangedSubview(bordersStackView.arrangedSubviews[0])
+            bordersStackView.arrangedSubviews[0].removeFromSuperview()
             
             country.countryBorders.forEach({ (border) in
                 addBorderBtn(border)
@@ -164,9 +164,7 @@ extension DetailViewController {
         
         btn.setTitle(str, for: .normal)
         btn.setTitleColor(.black, for: .normal)
-//        btn.layer.borderWidth = 2
-//        btn.layer.borderColor = UIColor.black.cgColor
-//        btn.layer.cornerRadius = 5
+
         btn.addTarget(self, action: #selector(self.action(sender:)), for: .touchUpInside)
         
         bordersStackView.addArrangedSubview(btn)
