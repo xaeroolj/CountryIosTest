@@ -1,0 +1,22 @@
+/* 
+  Localizable.strings
+  CountryTest
+
+  Created by Roman Trekhlebov on 30.11.2020.
+  
+*/
+"Main" = "Main";
+"BackToMain" = "ToMain";
+"badUrlError" = "Bad url, internal error.";
+"decodingError" = "Decoding, internal error.";
+"domainError" = "Network error please try again.";
+"noFoundError" = "Items not found, please try again.";
+"Loading..." = "Loading...";
+"PleaseUseSearchTextField" = "Please Use Search Text Field";
+"langLbl" = "Languages";
+"langPlaceholder" = "We dont have any information";
+"curencyLbl" = "Currency";
+"currPlaceholder" = "No currency info";
+"bordersLbl" = "Land borders";
+"borderPlaceholder" = "No borders";
+

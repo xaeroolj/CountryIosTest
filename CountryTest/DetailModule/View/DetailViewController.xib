@@ -55,7 +55,7 @@
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Lo4-k4-GHo" userLabel="Lang Stack View">
                     <rect key="frame" x="20" y="227" width="374" height="20.5"/>
                     <subviews>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="We ont have any information" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MnX-u4-crg">
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="We dont have any information" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MnX-u4-crg">
                             <rect key="frame" x="0.0" y="0.0" width="374" height="20.5"/>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             <nil key="textColor"/>
@@ -87,13 +87,13 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" showsHorizontalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MVG-cq-IFK">
-                    <rect key="frame" x="0.0" y="376" width="414" height="466"/>
+                    <rect key="frame" x="20" y="376" width="374" height="466"/>
                     <subviews>
                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="9jA-2e-Hpa" userLabel="Border Stack View">
-                            <rect key="frame" x="0.0" y="0.0" width="414" height="20.5"/>
+                            <rect key="frame" x="0.0" y="0.0" width="374" height="20.5"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No borders" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qlx-Yj-gUo">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="20.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="374" height="20.5"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
@@ -117,7 +117,7 @@
                 <constraint firstItem="Lo4-k4-GHo" firstAttribute="top" secondItem="P6S-up-3gd" secondAttribute="bottom" constant="10" id="6d3-EE-jdz"/>
                 <constraint firstItem="P6S-up-3gd" firstAttribute="leading" secondItem="f3F-Mg-vLS" secondAttribute="leading" id="6un-km-iFS"/>
                 <constraint firstItem="Lo4-k4-GHo" firstAttribute="leading" secondItem="P6S-up-3gd" secondAttribute="leading" id="9l4-tE-zNG"/>
-                <constraint firstItem="MVG-cq-IFK" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="AUZ-Ho-NdW"/>
+                <constraint firstItem="MVG-cq-IFK" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="AUZ-Ho-NdW"/>
                 <constraint firstItem="VUD-0Q-cWm" firstAttribute="trailing" secondItem="Lo4-k4-GHo" secondAttribute="trailing" id="Dbe-8L-35d"/>
                 <constraint firstItem="f3F-Mg-vLS" firstAttribute="leading" secondItem="YgS-uY-IWl" secondAttribute="leading" id="F61-Ri-ogO"/>
                 <constraint firstItem="DA9-EA-Rmf" firstAttribute="top" secondItem="VUD-0Q-cWm" secondAttribute="bottom" constant="10" id="M8s-pL-Ndf"/>
@@ -137,7 +137,7 @@
                 <constraint firstItem="f3F-Mg-vLS" firstAttribute="trailing" secondItem="YgS-uY-IWl" secondAttribute="trailing" id="nIJ-AH-POq"/>
                 <constraint firstItem="VUD-0Q-cWm" firstAttribute="leading" secondItem="Lo4-k4-GHo" secondAttribute="leading" id="p4r-Kg-b7i"/>
                 <constraint firstItem="YgS-uY-IWl" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="v67-T8-xbl"/>
-                <constraint firstItem="MVG-cq-IFK" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="yL5-Bk-CPx"/>
+                <constraint firstItem="MVG-cq-IFK" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" constant="-20" id="yL5-Bk-CPx"/>
                 <constraint firstItem="P6S-up-3gd" firstAttribute="top" relation="greaterThanOrEqual" secondItem="f3F-Mg-vLS" secondAttribute="bottom" constant="20" id="zCY-Ke-mQf"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="P6S-up-3gd" secondAttribute="trailing" constant="20" id="zO9-rA-dYc"/>
                 <constraint firstItem="MVG-cq-IFK" firstAttribute="top" secondItem="QCQ-pg-8aG" secondAttribute="bottom" constant="10" id="zRC-ds-vVA"/>

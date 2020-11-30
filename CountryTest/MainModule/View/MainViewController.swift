@@ -39,7 +39,7 @@ class MainViewController: UIViewController {
     // MARK: - Public Methods
     // MARK: - Private Methods
     private func setupUI() {
-        title = "Main"
+        title = K.ConstantStrings.main
         searchTextField.delegate = self
         tableView.dataSource = self
         tableView.delegate = self
@@ -78,11 +78,23 @@ extension MainViewController: MainViewProtocol {
     func showError(_ error: NetworkError) {
         // TODO: Create allert view
         #warning("TODO: Create allert view")
+        var errorString = String()
+        switch error {
         
-        print(error)
-        updateBackground(with: error.localizedDescription)
+        case .badUrlError:
+            errorString = NSLocalizedString("badUrlError", comment: "")
+        case .decodingError:
+            errorString = NSLocalizedString("decodingError", comment: "")
+        case .domainError:
+            errorString = NSLocalizedString("domainError", comment: "")
+        case .notFound:
+            errorString = NSLocalizedString("noFoundError", comment: "")
+        }
+        
+        print(errorString)
+        updateBackground(with: errorString)
         tableView.reloadData()
-
+        
     }
     
     func initState() {
@@ -94,7 +106,7 @@ extension MainViewController: MainViewProtocol {
         tableView.reloadData()
         updateBackground(with: K.ConstantStrings.loading)
     }
-
+    
 }
 
 extension MainViewController: UITableViewDataSource {
@@ -106,7 +118,7 @@ extension MainViewController: UITableViewDataSource {
         let cell = UITableViewCell(style: UITableViewCell.CellStyle.subtitle,
                                    reuseIdentifier: K.CellIdentifiers.mainModuleCell)
         let country = presenter.countryArray?[indexPath.row ]
-
+        
         cell.textLabel?.text = country?.countryName
         
         cell.detailTextLabel?.text = country?.countryCode
@@ -130,7 +142,7 @@ extension MainViewController: UITextFieldDelegate {
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         
         
-                
+        
         let newString = string
         let oldString = searchTextField.text ?? ""
         var finalString = ""

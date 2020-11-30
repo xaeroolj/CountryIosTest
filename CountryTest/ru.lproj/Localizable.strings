@@ -1,0 +1,21 @@
+/* 
+  Localizable.strings
+  CountryTest
+
+  Created by Roman Trekhlebov on 30.11.2020.
+  
+*/
+"Main" = "Начало";
+"BackToMain" = "В Начало";
+"badUrlError" = "Bad url, внутренняя ошибка.";
+"decodingError" = "Decoding, внутренняя ошибка.";
+"domainError" = "Ошибка связи. Проверте подключение.";
+"noFoundError" = "Информация не найдена.";
+"Loading..." = "Загрузка...";
+"PleaseUseSearchTextField" = "Для поиска, используйте поле выше.";
+"langLbl" = "Языки";
+"langPlaceholder" = "Инормация о языках не найдена.";
+"curencyLbl" = "Валюта";
+"currPlaceholder" = "Инормация о валютах не найдена.";
+"bordersLbl" = "Границы";
+"borderPlaceholder" = "Инормация о границах не найдена.";

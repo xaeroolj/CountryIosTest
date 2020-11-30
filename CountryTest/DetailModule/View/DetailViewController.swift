@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import WebKit
 
 protocol DetailViewProtocol: AnyObject {
     func updateView()
@@ -43,8 +44,8 @@ class DetailViewController: UIViewController {
         
         
         
-
-        fade(alpha: 0.0)
+        localize()
+        fade(alpha: 0.0, time: 0.0)
 
         if let code = presenter.requestedCountryCode {
             presenter.getCountryFor(code: code)
@@ -80,7 +81,6 @@ extension DetailViewController: DetailViewProtocol {
         self.populateBoarders()
         
         fade(alpha: 1.0)
-        
     }
     
     func showError(_ error: NetworkError) {
@@ -92,7 +92,7 @@ extension DetailViewController: DetailViewProtocol {
     }
     
     func showMainBtn() {
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Main", style: .plain, target: self, action: #selector(mainTapped))
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: K.ConstantStrings.backToMain, style: .plain, target: self, action: #selector(mainTapped))
     }
     
     @objc private func mainTapped() {
@@ -103,9 +103,9 @@ extension DetailViewController: DetailViewProtocol {
 // MARK: - PopulateUI
 extension DetailViewController {
     
-    private func fade(alpha: Double) {
+    private func fade(alpha: Double, time: Double = 1.5) {
         let cgAlpha = CGFloat(alpha)
-        UIView.animate(withDuration: 1.5) {
+        UIView.animate(withDuration: time) {
             self.countryNameLbl.alpha = cgAlpha
             self.nativeCountryNameLbl.alpha = cgAlpha
             self.countryFlag.alpha = cgAlpha
@@ -119,6 +119,20 @@ extension DetailViewController {
         }
     }
     
+    private func localize() {
+        languageLbl.text = K.ConstantStrings.langLbl
+        let langPlaceHolder = langStackView.arrangedSubviews[0] as! UILabel
+        langPlaceHolder.text = K.ConstantStrings.langPlaceholder
+        
+        currencyLbl.text = K.ConstantStrings.curencyLbl
+        let currPlaceHolder = currencyStackView.arrangedSubviews[0] as! UILabel
+        currPlaceHolder.text = K.ConstantStrings.currPlaceholder
+        
+        borderslbl.text = K.ConstantStrings.bordersLbl
+        let borderPlaceHolder = bordersStackView.arrangedSubviews[0] as! UILabel
+        borderPlaceHolder.text = K.ConstantStrings.borderPlaceholder
+    }
+    
     private func populateLang() {
         guard let country = presenter.country else { return }
         if !country.countryLanguages.isEmpty {
@@ -127,6 +141,7 @@ extension DetailViewController {
             let countryLangStrings = country.countryLanguages.map {"\($0.name ?? "None") (\($0.nativeName ?? "None"))"}
             countryLangStrings.forEach { (item) in
                 let lbl = UILabel()
+                lbl.numberOfLines = 0
                 lbl.text = item
                 self.langStackView.addArrangedSubview(lbl)
             }
@@ -141,6 +156,7 @@ extension DetailViewController {
             let countryCurStrings = country.countryCurrencies.map {"\($0.code ?? "None") (\($0.name ?? "None"))"}
             countryCurStrings.forEach { (item) in
                 let lbl = UILabel()
+                lbl.numberOfLines = 0
                 lbl.text = item
                 self.currencyStackView.addArrangedSubview(lbl)
             }
@@ -171,6 +187,7 @@ extension DetailViewController {
     }
     
     @objc private func action(sender: UIButton!) {
+        
         presenter.showNewCountryWith(code: sender.currentTitle!)
         
     }
