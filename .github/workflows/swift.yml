@@ -12,6 +12,8 @@ jobs:
     runs-on: macos-latest
 
     steps:
+    - name: Dependencies
+      run: bundle exec pod install
     - uses: actions/checkout@v2
     - name: Build
       run: swift build -v
