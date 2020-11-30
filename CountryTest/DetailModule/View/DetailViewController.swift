@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SDWebImageSVGKitPlugin
 
 protocol DetailViewProtocol: AnyObject {
     func updateView()
@@ -66,6 +67,9 @@ extension DetailViewController: DetailViewProtocol {
         
         guard let country = presenter.country else { return }
 
+        if let url = URL(string: country.countryFlag) {
+            countryFlag.sd_setImage(with: url)
+        }
 
         title = country.countryCode.uppercased()
         countryNameLbl.text = country.countryName

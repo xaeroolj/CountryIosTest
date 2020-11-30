@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SDWebImageSVGKitPlugin
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -14,6 +15,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
+        // MARK: - SDWebImageSVGKitPlugin init
+        let svgCoder = SDImageSVGKCoder.shared
+        SDImageCodersManager.shared.addCoder(svgCoder)
+        
+        // MARK: - Window init
         window = UIWindow(frame: UIScreen.main.bounds)
         
         let navigationController = UINavigationController()
