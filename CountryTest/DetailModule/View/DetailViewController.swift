@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import WebKit
 
 protocol DetailViewProtocol: AnyObject {
     func updateView()
@@ -35,6 +34,7 @@ final class DetailViewController: UIViewController {
     var presenter: DetailViewPresenterProtocol!
     
     // MARK: - Private Properties
+    private lazy var activityIndicator = UIActivityIndicatorView()
         
     // MARK: - Initializers
     
@@ -42,27 +42,22 @@ final class DetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
-        
-        localize()
-        fade(alpha: 0.0, time: 0.0)
+        localizeUI()
 
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        showActivityIndicator()
+        
         if let code = presenter.requestedCountryCode {
             presenter.getCountryFor(code: code)
         } else {
             presenter.getCountry()
         }
+        
     }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-    }
-    
-    // MARK: - Public Methods
-    
-    // MARK: - Private Methods
-    // MARK: - IBActions
-    
 }
 
 extension DetailViewController: DetailViewProtocol {
@@ -79,6 +74,8 @@ extension DetailViewController: DetailViewProtocol {
         self.populateLang()
         self.populateCurrency()
         self.populateBoarders()
+        
+        self.activityIndicator.stopAnimating()
         
         fade(alpha: 1.0)
     }
@@ -101,6 +98,8 @@ extension DetailViewController: DetailViewProtocol {
             
             actionArray.append(reloadAlert)
         }
+        
+        self.activityIndicator.stopAnimating()
 
         self.showAlert(title: K.ConstantStrings.errorTitle, message: error.localizedDescription, actions: actionArray)
     }
@@ -116,6 +115,15 @@ extension DetailViewController: DetailViewProtocol {
 
 // MARK: - Setup UI
 extension DetailViewController {
+    
+    private func showActivityIndicator() {
+        activityIndicator.center = view.center
+        activityIndicator.hidesWhenStopped = true
+        activityIndicator.style = .whiteLarge
+        activityIndicator.color = .black
+        activityIndicator.startAnimating()
+        view.addSubview(activityIndicator)
+    }
     
     private func fade(alpha: Double, time: Double = 1.5) {
         let cgAlpha = CGFloat(alpha)
@@ -133,7 +141,10 @@ extension DetailViewController {
         }
     }
     
-    private func localize() {
+    private func localizeUI() {
+        
+        fade(alpha: 0.0, time: 0.0)
+        
         languageLbl.text = K.ConstantStrings.langLbl
         let langPlaceHolder = langStackView.arrangedSubviews[0] as! UILabel
         langPlaceHolder.text = K.ConstantStrings.langPlaceholder

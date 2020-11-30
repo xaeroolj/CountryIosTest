@@ -78,8 +78,6 @@
 		FF1F7AEE2571737C00FA5CE5 /* UIViewController+Extension .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension .swift"; sourceTree = "<group>"; };
 		FF1F7BA62575229500FA5CE5 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		FF1F7BAA257522D600FA5CE5 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
-		FF1F7BAE2575291200FA5CE5 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
-		FF1F7BB02575294F00FA5CE5 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		FF1F7BB32575642600FA5CE5 /* UrlConstructorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UrlConstructorTests.swift; sourceTree = "<group>"; };
 		FF1F7BB92575667C00FA5CE5 /* NetworkErrorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkErrorTests.swift; sourceTree = "<group>"; };
 		FF1F7BC025756B4F00FA5CE5 /* CountryServiseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryServiseTests.swift; sourceTree = "<group>"; };
@@ -428,8 +426,6 @@
 			isa = PBXVariantGroup;
 			children = (
 				FF1F7A0B256EC37500FA5CE5 /* Base */,
-				FF1F7BAE2575291200FA5CE5 /* en */,
-				FF1F7BB02575294F00FA5CE5 /* ru */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
