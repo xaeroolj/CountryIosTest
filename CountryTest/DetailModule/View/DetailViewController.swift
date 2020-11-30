@@ -85,10 +85,24 @@ extension DetailViewController: DetailViewProtocol {
     
     func showError(_ error: NetworkError) {
         
+        var actionArray = [UIAlertAction]()
+        
+        let returnAlert = UIAlertAction(title: K.ConstantStrings.returnAction, style: .destructive) { (action) in
+            self.navigationController?.popViewController(animated: true)
+        }
+        
+        actionArray.append(returnAlert)
+        
+        if error == .domainError {
+            let reloadAlert = UIAlertAction(title: K.ConstantStrings.againAction, style: .cancel) { (action) in
+                let countryCode = self.presenter.requestedCountryCode!
+                self.presenter.getCountryFor(code: countryCode)
+            }
+            
+            actionArray.append(reloadAlert)
+        }
 
-        // TODO: Create allert view
-        #warning("TODO: Create allert view")
-        print(error)
+        self.showAlert(title: K.ConstantStrings.errorTitle, message: error.localizedDescription, actions: actionArray)
     }
     
     func showMainBtn() {
@@ -100,7 +114,7 @@ extension DetailViewController: DetailViewProtocol {
     }
 }
 
-// MARK: - PopulateUI
+// MARK: - Setup UI
 extension DetailViewController {
     
     private func fade(alpha: Double, time: Double = 1.5) {

@@ -32,5 +32,13 @@ struct K {
         static let bordersLbl = NSLocalizedString("bordersLbl", comment: "")
         static let borderPlaceholder = NSLocalizedString("borderPlaceholder", comment: "")
         
+        static let errorTitle = NSLocalizedString("Error", comment: "")
+        static let returnAction = NSLocalizedString("Return", comment: "")
+        static let againAction = NSLocalizedString("Again", comment: "")
+
+        
+
+
+        
     }
 }

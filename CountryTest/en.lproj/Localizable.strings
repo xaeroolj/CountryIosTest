@@ -19,4 +19,8 @@
 "currPlaceholder" = "No currency info";
 "bordersLbl" = "Land borders";
 "borderPlaceholder" = "No borders";
+"Error" = "Error";
+"Return" = "Return";
+"Again" = "Again";
+
 

@@ -7,9 +7,24 @@
 
 import Foundation
 
-enum NetworkError: Error {
+enum NetworkError: Error{
     case decodingError
     case domainError
     case notFound
     case badUrlError
+}
+
+extension NetworkError: LocalizedError {
+    public var errorDescription: String? {
+        switch self {
+        case .decodingError:
+            return NSLocalizedString("decodingError", comment: "")
+        case .domainError:
+            return NSLocalizedString("domainError", comment: "")
+        case .notFound:
+            return NSLocalizedString("noFoundError", comment: "")
+        case .badUrlError:
+            return NSLocalizedString("badUrlError", comment: "")
+        }
+    }
 }

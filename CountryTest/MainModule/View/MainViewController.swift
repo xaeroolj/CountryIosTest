@@ -76,23 +76,8 @@ extension MainViewController: MainViewProtocol {
     }
     
     func showError(_ error: NetworkError) {
-        // TODO: Create allert view
-        #warning("TODO: Create allert view")
-        var errorString = String()
-        switch error {
         
-        case .badUrlError:
-            errorString = NSLocalizedString("badUrlError", comment: "")
-        case .decodingError:
-            errorString = NSLocalizedString("decodingError", comment: "")
-        case .domainError:
-            errorString = NSLocalizedString("domainError", comment: "")
-        case .notFound:
-            errorString = NSLocalizedString("noFoundError", comment: "")
-        }
-        
-        print(errorString)
-        updateBackground(with: errorString)
+        updateBackground(with: error.localizedDescription)
         tableView.reloadData()
         
     }
