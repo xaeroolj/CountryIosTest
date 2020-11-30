@@ -10,12 +10,26 @@ import XCTest
 
 class MockMainView: MainViewProtocol {
     
+    let viewLoadingExpectation = XCTestExpectation(description: "viewLoading called")
+    let initStateExpectation = XCTestExpectation(description: "viewInit called")
+    let viewUpdateExpectation = XCTestExpectation(description: "viewUpdate called")
+    let viewShowErrorExpectation = XCTestExpectation(description: "viewError called")
+    
+    func initState() {
+        initStateExpectation.fulfill()
+    }
+    
+    func viewLoading() {
+        viewLoadingExpectation.fulfill()
+    }
+    
+    
     func updateView() {
-        
+        viewUpdateExpectation.fulfill()
     }
     
     func showError(_ error: NetworkError) {
-        
+        viewShowErrorExpectation.fulfill()
     }
     
 }
@@ -33,6 +47,7 @@ class MockMainDataService: CountryServiceForMainViewProtocol {
     func getCountryBy(name: String, completion: @escaping (Result<[Country], NetworkError>) -> Void) {
         if let countryes = countryes {
             completion(.success(countryes ))
+            
         } else {
             completion(.failure(.domainError))
         }
@@ -116,5 +131,48 @@ class MainPresenterTests: XCTestCase {
         
     }
     
+    func testPeresenterGetCountry() throws {
+        
+        let country = Country(countryName: "foo",
+                              countryCode: "baz",
+                              countryFlag: "bar",
+                              countryNativeName: "фоо",
+                              countryLanguages: [],
+                              countryCurrencies: [],
+                              countryBorders: [])
+        
+        view = MockMainView()
+        dataService = MockMainDataService(countryes: [country])
+        presenter = MainPresenter(view: view, dataService: dataService, router: router)
+        
+        
+        //positive
+        presenter.getCountry(for: "foo")
+        wait(for: [
+            view.viewUpdateExpectation,
+            view.viewLoadingExpectation], timeout: 2.0)
+    }
+    
+    func testPeresenterGetCountryNegative() throws {
+        
+        view = MockMainView()
+        dataService = MockMainDataService()
+        presenter = MainPresenter(view: view, dataService: dataService, router: router)
+        //negative
+        presenter.getCountry(for: "")
+        view.viewUpdateExpectation.isInverted = true
+        wait(for: [view.viewUpdateExpectation], timeout: 2.0)
+    }
+    
+    func testPeresenterGetCountryErrorCalled() throws {
+        
+        view = MockMainView()
+        dataService = MockMainDataService()
+        presenter = MainPresenter(view: view, dataService: dataService, router: router)
+        
+        presenter.getCountry(for: "bar")
+        wait(for: [view.viewShowErrorExpectation], timeout: 2.0)
+    }
+
 
 }

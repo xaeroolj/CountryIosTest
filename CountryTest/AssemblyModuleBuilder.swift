@@ -14,7 +14,7 @@ protocol AssemblyBuilderProtocol {
 }
 
 
-class AssemblyModuleBuilder: AssemblyBuilderProtocol {
+final class AssemblyModuleBuilder: AssemblyBuilderProtocol {
     
     
     

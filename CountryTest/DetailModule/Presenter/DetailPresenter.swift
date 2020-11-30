@@ -55,7 +55,9 @@ final class DetailPresenter: DetailViewPresenterProtocol {
     }
     
     func getCountry() {
-        self.view?.updateView()
+        if self.country != nil {
+            self.view?.updateView()
+        }
     }
     
     func getCountryFor(code: String) {

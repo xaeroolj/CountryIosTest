@@ -16,7 +16,7 @@ protocol MainViewPresenterProtocol: AnyObject  {
     var countryArray: [CountryMainViewProtocol]? { get set }
 }
 
-class MainPresenter: NSObject, MainViewPresenterProtocol  {
+final class MainPresenter: NSObject, MainViewPresenterProtocol  {
     
     weak var view: MainViewProtocol?
     var router: RouterProtocol?

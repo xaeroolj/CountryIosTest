@@ -11,7 +11,7 @@ protocol DataFetcher {
     func fetchGenericJsonData<T: Decodable>(resource: Resource<T>, completion: @escaping (Result<T, NetworkError>) -> Void)
 }
 
-class NetworkDataFetcher: DataFetcher {
+final class NetworkDataFetcher: DataFetcher {
     
     private let networkService: Networking
     

@@ -14,7 +14,7 @@ protocol DetailViewProtocol: AnyObject {
     func showError(_ error: NetworkError)
 }
 
-class DetailViewController: UIViewController {
+final class DetailViewController: UIViewController {
     
     // MARK: - IBOutlets
     

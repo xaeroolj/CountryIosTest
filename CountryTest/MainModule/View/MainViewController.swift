@@ -14,7 +14,7 @@ protocol MainViewProtocol: AnyObject {
     func viewLoading()
 }
 
-class MainViewController: UIViewController {
+final class MainViewController: UIViewController {
     // MARK: - IBOutlets
     
     @IBOutlet weak private var searchTextField: UITextField!

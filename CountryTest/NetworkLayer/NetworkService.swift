@@ -17,7 +17,7 @@ enum HttpMethod: String {
     case post = "POST"
 }
 
-class NetworkService: Networking {
+final class NetworkService: Networking {
     
     var task: URLSessionDataTask?
     

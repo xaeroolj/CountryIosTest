@@ -36,9 +36,5 @@ struct K {
         static let returnAction = NSLocalizedString("Return", comment: "")
         static let againAction = NSLocalizedString("Again", comment: "")
 
-        
-
-
-        
     }
 }

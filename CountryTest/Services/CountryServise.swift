@@ -20,7 +20,7 @@ protocol CountryServiceForMainViewProtocol {
 
 
 
-final public class CountryServise: CountryServiseProtocol {
+final class CountryServise: CountryServiseProtocol {
 
     private let dataFetcher = NetworkDataFetcher()
 

@@ -19,7 +19,7 @@ protocol RouterProtocol: RouterMain {
     func popToRoot()
 }
 
-class Router: RouterProtocol {
+final class Router: RouterProtocol {
     
     
     

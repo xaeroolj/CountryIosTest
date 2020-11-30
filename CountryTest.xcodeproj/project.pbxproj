@@ -32,6 +32,9 @@
 		FF1F7AE22571709400FA5CE5 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF1F7AE12571709300FA5CE5 /* String+Extension.swift */; };
 		FF1F7AEF2571737D00FA5CE5 /* UIViewController+Extension .swift in Sources */ = {isa = PBXBuildFile; fileRef = FF1F7AEE2571737C00FA5CE5 /* UIViewController+Extension .swift */; };
 		FF1F7BA52575229500FA5CE5 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = FF1F7BA72575229500FA5CE5 /* Localizable.strings */; };
+		FF1F7BB42575642700FA5CE5 /* UrlConstructorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF1F7BB32575642600FA5CE5 /* UrlConstructorTests.swift */; };
+		FF1F7BBA2575667C00FA5CE5 /* NetworkErrorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF1F7BB92575667C00FA5CE5 /* NetworkErrorTests.swift */; };
+		FF1F7BC125756B4F00FA5CE5 /* CountryServiseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF1F7BC025756B4F00FA5CE5 /* CountryServiseTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,6 +80,9 @@
 		FF1F7BAA257522D600FA5CE5 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
 		FF1F7BAE2575291200FA5CE5 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		FF1F7BB02575294F00FA5CE5 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		FF1F7BB32575642600FA5CE5 /* UrlConstructorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UrlConstructorTests.swift; sourceTree = "<group>"; };
+		FF1F7BB92575667C00FA5CE5 /* NetworkErrorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkErrorTests.swift; sourceTree = "<group>"; };
+		FF1F7BC025756B4F00FA5CE5 /* CountryServiseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryServiseTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -139,6 +145,8 @@
 			isa = PBXGroup;
 			children = (
 				FF1F7A18256EC37600FA5CE5 /* Info.plist */,
+				FF1F7BC025756B4F00FA5CE5 /* CountryServiseTests.swift */,
+				FF1F7BBD2575669100FA5CE5 /* Helpers */,
 				FF1F7ACF25701E1200FA5CE5 /* RouterTests.swift */,
 				FF1F7A79256EDB0200FA5CE5 /* MainModuleTests */,
 				FF1F7AD9257045D800FA5CE5 /* DetailModuleTests */,
@@ -258,6 +266,15 @@
 				FF1F7AEE2571737C00FA5CE5 /* UIViewController+Extension .swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		FF1F7BBD2575669100FA5CE5 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				FF1F7BB92575667C00FA5CE5 /* NetworkErrorTests.swift */,
+				FF1F7BB32575642600FA5CE5 /* UrlConstructorTests.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -387,8 +404,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FF1F7BC125756B4F00FA5CE5 /* CountryServiseTests.swift in Sources */,
+				FF1F7BB42575642700FA5CE5 /* UrlConstructorTests.swift in Sources */,
 				FF1F7AD4257045D000FA5CE5 /* DetailPresenterTests.swift in Sources */,
 				FF1F7AD025701E1300FA5CE5 /* RouterTests.swift in Sources */,
+				FF1F7BBA2575667C00FA5CE5 /* NetworkErrorTests.swift in Sources */,
 				FF1F7A72256EDAFC00FA5CE5 /* MainPresenterTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
