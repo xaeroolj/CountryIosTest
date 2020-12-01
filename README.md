@@ -1,4 +1,6 @@
 # CountryIosTest
+![iOS starter workflow](https://github.com/xaeroolj/CountryIosTest/workflows/iOS%20starter%20workflow/badge.svg)
+
 skill test app 30 nov 2020
 
 Countries
