@@ -209,7 +209,7 @@ extension DetailViewController {
     private func addBorderBtn(_ str: String) {
 
         let btn = UIButton()
-
+        btn.contentHorizontalAlignment = .left
         btn.setTitle(str, for: .normal)
         if #available(iOS 13.0, *) {
             btn.setTitleColor(.label, for: .normal)
