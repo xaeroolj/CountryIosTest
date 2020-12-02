@@ -11,31 +11,27 @@ import XCTest
 class UrlConstructorTests: XCTestCase {
 
     func testConstructPositive() throws {
-        
-        
+
         let codeResult = UrlConstructor.getCountryByCodeUrl(code: "Foo")?.absoluteString
         let nameResult = UrlConstructor.getCountryByNameUrl(name: "Foo")?.absoluteString
-        
+
         XCTAssertNotNil(codeResult)
         XCTAssertNotNil(nameResult)
-        
-        XCTAssertEqual(codeResult!, K.UrlStrings.countryByCodeUrl + "Foo")
-        XCTAssertEqual(nameResult!, K.UrlStrings.countryByNameUrl + "Foo")
+
+        XCTAssertEqual(codeResult!, Constants.UrlStrings.countryByCodeUrl + "Foo")
+        XCTAssertEqual(nameResult!, Constants.UrlStrings.countryByNameUrl + "Foo")
     }
-    
+
     func testConstructNegative() throws {
-        
-        
+
         let codeResult = UrlConstructor.getCountryByCodeUrl(code: "Foo")?.absoluteString
         let nameResult = UrlConstructor.getCountryByNameUrl(name: "Foo")?.absoluteString
-        
+
         XCTAssertNotNil(codeResult)
         XCTAssertNotNil(nameResult)
-        
-        XCTAssertNotEqual(codeResult!, K.UrlStrings.countryByCodeUrl + "Bar")
-        XCTAssertNotEqual(nameResult!, K.UrlStrings.countryByNameUrl + "Bar")
+
+        XCTAssertNotEqual(codeResult!, Constants.UrlStrings.countryByCodeUrl + "Bar")
+        XCTAssertNotEqual(nameResult!, Constants.UrlStrings.countryByNameUrl + "Bar")
     }
-
-
 
 }

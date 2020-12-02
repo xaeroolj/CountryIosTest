@@ -9,7 +9,7 @@ import XCTest
 @testable import CountryTest
 
 class CountryServiseTests: XCTestCase {
-    
+
     var dataService: CountryServise!
 
     override func setUpWithError() throws {
@@ -30,7 +30,7 @@ class CountryServiseTests: XCTestCase {
                 }
             } catch {return}
         }
-        
+
         wait(for: [expectation], timeout: 10.0)
     }
 
@@ -44,7 +44,7 @@ class CountryServiseTests: XCTestCase {
                 }
             } catch {return}
         }
-        
+
         wait(for: [expectation], timeout: 10.0)
     }
 }

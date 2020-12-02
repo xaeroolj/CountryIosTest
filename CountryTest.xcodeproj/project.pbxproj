@@ -322,6 +322,7 @@
 				FF1F79F9256EC36C00FA5CE5 /* Frameworks */,
 				FF1F79FA256EC36C00FA5CE5 /* Resources */,
 				6F4FC876F54613B1D9675EA4 /* [CP] Embed Pods Frameworks */,
+				FF70ACE425780616003561DF /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -473,6 +474,23 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-CountryTest/Pods-CountryTest-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
+		};
+		FF70ACE425780616003561DF /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\n  swiftlint\nelse\n  echo \"error: SwiftLint does not exist, download it from https://github.com/realm/SwiftLint\"\n  exit 1\nfi\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 

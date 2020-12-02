@@ -6,16 +6,15 @@
 //
 
 import Foundation
-//MARK: - URLConstructor
+// MARK: - URLConstructor
 final class UrlConstructor {
 
     static func getCountryByNameUrl(name: String) -> URL? {
-        return URL(string: K.UrlStrings.countryByNameUrl.appending("\(name.removeWhiteSpaces())"))
+        return URL(string: Constants.UrlStrings.countryByNameUrl.appending("\(name.removeWhiteSpaces())"))
     }
-    
+
     static func getCountryByCodeUrl(code: String) -> URL? {
-        return URL(string: K.UrlStrings.countryByCodeUrl.appending("\(code.removeWhiteSpaces())"))
+        return URL(string: Constants.UrlStrings.countryByCodeUrl.appending("\(code.removeWhiteSpaces())"))
     }
-    
-    
+
 }

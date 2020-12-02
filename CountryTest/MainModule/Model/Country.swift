@@ -15,24 +15,24 @@ protocol CountryMainViewProtocol {
 }
 
 protocol CountryDetailViewProtocol: CountryMainViewProtocol {
-    var countryFlag: String {get} //flag (.svg)
-    var countryNativeName: String {get} //nativeName
-    var countryLanguages: [Language] {get} // languages []
-    var countryCurrencies: [Currency] {get} //currencies
-    var countryBorders: [String] {get} //borders [string]
+    var countryFlag: String {get}
+    var countryNativeName: String {get}
+    var countryLanguages: [Language] {get}
+    var countryCurrencies: [Currency] {get}
+    var countryBorders: [String] {get}
 }
 
 struct Country: Codable, CountryViewProtocol {
     let countryName: String
     let countryCode: String
-    
+
     let countryFlag: String
     let countryNativeName: String
     let countryLanguages: [Language]
     let countryCurrencies: [Currency]
     let countryBorders: [String]
-    
-    private enum CodingKeys : String, CodingKey {
+
+    private enum CodingKeys: String, CodingKey {
         case countryName = "name",
              countryCode = "alpha3Code",
              countryFlag = "flag",
@@ -53,4 +53,3 @@ struct Language: Codable {
     let name: String?
     let nativeName: String?
 }
-
