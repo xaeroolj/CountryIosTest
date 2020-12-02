@@ -7,35 +7,34 @@
 
 import Foundation
 
-protocol MainViewPresenterProtocol: AnyObject  {
+protocol MainViewPresenterProtocol: AnyObject {
     init(view: MainViewProtocol, dataService: CountryServiceForMainViewProtocol, router: RouterProtocol)
-    
+
     func getCountry(for name: String)
     func tapOnCountry(country: CountryDetailViewProtocol)
-    
+
     var countryArray: [CountryMainViewProtocol]? { get set }
 }
 
-final class MainPresenter: NSObject, MainViewPresenterProtocol  {
-    
+final class MainPresenter: NSObject, MainViewPresenterProtocol {
+
     weak var view: MainViewProtocol?
     var router: RouterProtocol?
     let dataService: CountryServiceForMainViewProtocol!
-    
+
     var countryArray: [CountryMainViewProtocol]?
 
     required init(view: MainViewProtocol, dataService: CountryServiceForMainViewProtocol, router: RouterProtocol) {
         self.view = view
         self.dataService = dataService
         self.router = router
-        
+
     }
 
-    
     func getCountry(for name: String) {
-        
+
         NSObject.cancelPreviousPerformRequests(withTarget: self)
-        
+
         if name.isEmpty {
             self.countryArray?.removeAll()
             self.view?.initState()
@@ -43,11 +42,11 @@ final class MainPresenter: NSObject, MainViewPresenterProtocol  {
         }
         self.countryArray?.removeAll()
         self.view?.viewLoading()
-        
+
         perform(#selector(delayedRequest(_:)), with: name, afterDelay: 0.5)
 
     }
-    
+
     @objc private func delayedRequest(_ name: String) {
         dataService.getCountryBy(name: name) { [weak self] result in
             guard let self = self else { return }
@@ -57,16 +56,16 @@ final class MainPresenter: NSObject, MainViewPresenterProtocol  {
                     self.view?.updateView()
                 } catch {
                     self.countryArray?.removeAll()
-                    self.view?.showError(error as! NetworkError)
-                    
+                    if let error = error as? NetworkError {
+                        self.view?.showError(error)
+                    }
                 }
             }
         }
     }
-    
+
     func tapOnCountry(country: CountryDetailViewProtocol) {
         router?.showDetail(country: country)
     }
-    
-    
+
 }

@@ -14,12 +14,11 @@ class RouterTests: XCTestCase {
     var assembly: AssemblyModuleBuilder!
 
     override func setUpWithError() throws {
-        
+
         navigatioController = UINavigationController()
         assembly = AssemblyModuleBuilder()
         router = Router(navigationController: navigatioController, assemblyBuilder: assembly)
     }
-     
 
     override func tearDownWithError() throws {
         router = nil
@@ -32,9 +31,9 @@ class RouterTests: XCTestCase {
         let rootVC = navigatioController.viewControllers.first
         XCTAssertTrue(rootVC is MainViewController)
     }
-    
+
     func testShowDetail() {
-        
+
         let country = Country(countryName: "foo",
                               countryCode: "baz",
                               countryFlag: "bar",
@@ -43,21 +42,21 @@ class RouterTests: XCTestCase {
                               countryCurrencies: [],
                               countryBorders: [])
         router.showDetail(country: country)
-        
+
         let visibleVC = navigatioController.visibleViewController
         XCTAssertNotNil(visibleVC)
         XCTAssertTrue(visibleVC is DetailViewController)
     }
 
     func testShowNewDetail() {
-        
+
         router.showNewCountryDetail(code: "Foo")
-        
+
         let visibleVC = navigatioController.visibleViewController
         XCTAssertNotNil(visibleVC)
         XCTAssertTrue(visibleVC is DetailViewController)
     }
-    
+
     func testPopToRoot() {
         router.initialViewController()
         router.popToRoot()
@@ -65,6 +64,5 @@ class RouterTests: XCTestCase {
         XCTAssertNotNil(visibleVC)
         XCTAssertTrue(visibleVC is MainViewController)
     }
-    
 
 }
